@@ -1,0 +1,840 @@
+{
+  "game": {
+    "createdAt": "2026-11-02T23:21:18.459220Z",
+    "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+    "players": [
+      {
+        "displayName": "Mila",
+        "seat": 0,
+        "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
+        "username": "mila"
+      },
+      {
+        "displayName": "",
+        "seat": 1,
+        "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
+        "username": "mum"
+      }
+    ],
+    "rev": 2,
+    "turnStartedAt": "2026-11-02T23:21:18.503496Z",
+    "turnTimerHours": 72,
+    "view": {
+      "bagCount": 80,
+      "board": {
+        "cells": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "K"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "E"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "P"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "E"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "R"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "E"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "N"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "size": 15
+      },
+      "claimedBounties": [],
+      "config": {
+        "bingoBonus": 40,
+        "board": {
+          "random": false,
+          "size": 15
+        },
+        "bounties": 2,
+        "comeback": {
+          "behindBy": 50,
+          "percent": 25
+        },
+        "hintTokens": 3,
+        "language": "nl",
+        "players": [
+          {
+            "rackSize": 8,
+            "scorePercent": 100
+          },
+          {
+            "rackSize": 7,
+            "scorePercent": 100
+          }
+        ],
+        "rulesVersion": 1,
+        "swapMinBag": 7,
+        "teams": false
+      },
+      "history": [
+        {
+          "bounties": [],
+          "kind": "play",
+          "score": {
+            "base": 66,
+            "bingo": 40,
+            "bounty": 0,
+            "comeback": 0,
+            "handicap": 0,
+            "total": 66
+          },
+          "seat": 0,
+          "tiles": [
+            {
+              "pos": {
+                "col": 7,
+                "row": 1
+              },
+              "tile": {
+                "letter": "K"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 2
+              },
+              "tile": {
+                "letter": "E"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 3
+              },
+              "tile": {
+                "letter": "P"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 4
+              },
+              "tile": {
+                "letter": "E"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 5
+              },
+              "tile": {
+                "letter": "R"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 6
+              },
+              "tile": {
+                "letter": "E"
+              }
+            },
+            {
+              "pos": {
+                "col": 7,
+                "row": 7
+              },
+              "tile": {
+                "letter": "N"
+              }
+            }
+          ],
+          "words": [
+            {
+              "dir": "down",
+              "score": 26,
+              "start": {
+                "col": 7,
+                "row": 1
+              },
+              "word": "KEPEREN"
+            }
+          ]
+        }
+      ],
+      "layout": {
+        "cells": [
+          "tl",
+          null,
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "tw",
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          "tw",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "dw",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "dl",
+          null,
+          "tl",
+          null,
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          "dl",
+          null,
+          null,
+          "tw",
+          null,
+          null,
+          null,
+          "tl"
+        ],
+        "size": 15
+      },
+      "seats": [
+        {
+          "hintsLeft": 2,
+          "rack": [
+            "X",
+            "W",
+            "A",
+            "K",
+            "E",
+            "R",
+            "O",
+            "P"
+          ],
+          "rackCount": 8,
+          "resigned": false,
+          "score": 66
+        },
+        {
+          "hintsLeft": 3,
+          "rack": null,
+          "rackCount": 7,
+          "resigned": false,
+          "score": 0
+        }
+      ],
+      "status": {
+        "state": "active"
+      },
+      "turn": 1,
+      "unseen": [
+        {
+          "count": 6,
+          "tile": "A"
+        },
+        {
+          "count": 2,
+          "tile": "B"
+        },
+        {
+          "count": 1,
+          "tile": "C"
+        },
+        {
+          "count": 4,
+          "tile": "D"
+        },
+        {
+          "count": 12,
+          "tile": "E"
+        },
+        {
+          "count": 1,
+          "tile": "F"
+        },
+        {
+          "count": 3,
+          "tile": "G"
+        },
+        {
+          "count": 1,
+          "tile": "H"
+        },
+        {
+          "count": 6,
+          "tile": "I"
+        },
+        {
+          "count": 1,
+          "tile": "J"
+        },
+        {
+          "count": 2,
+          "tile": "K"
+        },
+        {
+          "count": 5,
+          "tile": "L"
+        },
+        {
+          "count": 3,
+          "tile": "M"
+        },
+        {
+          "count": 6,
+          "tile": "N"
+        },
+        {
+          "count": 5,
+          "tile": "O"
+        },
+        {
+          "count": 1,
+          "tile": "P"
+        },
+        {
+          "count": 1,
+          "tile": "Q"
+        },
+        {
+          "count": 5,
+          "tile": "R"
+        },
+        {
+          "count": 6,
+          "tile": "S"
+        },
+        {
+          "count": 7,
+          "tile": "T"
+        },
+        {
+          "count": 3,
+          "tile": "U"
+        },
+        {
+          "count": 2,
+          "tile": "V"
+        },
+        {
+          "count": 1,
+          "tile": "Y"
+        },
+        {
+          "count": 1,
+          "tile": "Z"
+        },
+        {
+          "count": 2,
+          "tile": "?"
+        }
+      ],
+      "viewer": 0
+    }
+  },
+  "turn": {
+    "bounties": [],
+    "kind": "play",
+    "score": {
+      "base": 66,
+      "bingo": 40,
+      "bounty": 0,
+      "comeback": 0,
+      "handicap": 0,
+      "total": 66
+    },
+    "seat": 0,
+    "tiles": [
+      {
+        "pos": {
+          "col": 7,
+          "row": 1
+        },
+        "tile": {
+          "letter": "K"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 2
+        },
+        "tile": {
+          "letter": "E"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 3
+        },
+        "tile": {
+          "letter": "P"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 4
+        },
+        "tile": {
+          "letter": "E"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 5
+        },
+        "tile": {
+          "letter": "R"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 6
+        },
+        "tile": {
+          "letter": "E"
+        }
+      },
+      {
+        "pos": {
+          "col": 7,
+          "row": 7
+        },
+        "tile": {
+          "letter": "N"
+        }
+      }
+    ],
+    "words": [
+      {
+        "dir": "down",
+        "score": 26,
+        "start": {
+          "col": 7,
+          "row": 1
+        },
+        "word": "KEPEREN"
+      }
+    ]
+  }
+}

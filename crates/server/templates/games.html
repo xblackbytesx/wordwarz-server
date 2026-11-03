@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Games · WordWarZ{% endblock %}
+{% block nav %}{% include "nav.html" %}{% endblock %}
+{% block content %}
+<h1>Games</h1>
+<p class="muted">Play in the app; here you can follow along and replay finished games.</p>
+<section class="card">
+  <h2>Running</h2>
+  {% if active.is_empty() %}<p class="muted">No running games. Start one in the app.</p>{% else %}
+  <table class="list">
+    <thead><tr><th>Players</th><th>Words</th><th>State</th><th>Last move</th></tr></thead>
+    <tbody>
+    {% for g in active %}
+      <tr><td><a href="/games/{{ g.id }}">{{ g.players }}</a></td><td>{{ g.language }}</td><td>{% if g.mine %}<span class="badge ok">{{ g.state }}</span>{% else %}{{ g.state }}{% endif %}</td><td>{{ g.updated }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+<section class="card">
+  <h2>Finished</h2>
+  {% if finished.is_empty() %}<p class="muted">None yet.</p>{% else %}
+  <table class="list">
+    <thead><tr><th>Players</th><th>Words</th><th>Result</th><th>Ended</th></tr></thead>
+    <tbody>
+    {% for g in finished %}
+      <tr><td><a href="/games/{{ g.id }}">{{ g.players }}</a></td><td>{{ g.language }}</td><td>{{ g.state }}</td><td>{{ g.updated }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+{% endblock %}

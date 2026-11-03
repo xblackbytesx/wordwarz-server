@@ -1,0 +1,46 @@
+[package]
+name = "wordwarz-server"
+description = "WordWarZ server: accounts, games, turns, nudges and the scoreboard"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+wordwarz-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+sha2 = "0.10"
+hex = "0.4"
+base64 = "0.22"
+axum = "0.8.9"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "time"] }
+tower = { version = "0.5", features = ["util"] }
+tower-http = { version = "0.7", features = ["compression-gzip", "trace"] }
+# Pinned to 0.8.x: sqlx 0.9 needs rustc >= 1.94. Runtime queries only (no
+# compile-time macros), so builds never need a live database.
+sqlx = { version = "0.8.6", default-features = false, features = ["runtime-tokio", "postgres", "uuid", "chrono", "json", "migrate", "macros"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", default-features = false, features = ["std", "clock", "serde"] }
+chrono-tz = "0.10"
+getrandom = "0.3"
+argon2 = { version = "0.5", features = ["std"] }
+askama = "0.16"
+# Invite and device-link QR codes, rendered as inline SVG (no images, no JS).
+qrcode = { version = "0.14", default-features = false, features = ["svg"] }
+# WebPush message encryption (RFC 8291, aes128gcm), RustCrypto only: the
+# push server (ntfy) relays ciphertext it cannot read.
+p256 = { version = "0.13", default-features = false, features = ["ecdh", "std"] }
+hkdf = "0.12"
+aes-gcm = { version = "0.10", default-features = false, features = ["aes", "alloc"] }
+# UnifiedPush delivery. rustls on ring, not reqwest's default aws-lc: that
+# needs cmake in every build image. Certificates come from the OS store.
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls-no-provider"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+http-body-util = "0.1"

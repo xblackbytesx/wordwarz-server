@@ -1,0 +1,13 @@
+<header class="nav">
+  <a class="brand" href="/">WordWarZ</a>
+  <nav>
+    <a href="/games" class="{{ nav.on("games") }}">Games</a>
+    <a href="/scoreboard" class="{{ nav.on("scoreboard") }}">Scoreboard</a>
+    <a href="/people" class="{{ nav.on("people") }}">People</a>
+    <a href="/devices" class="{{ nav.on("devices") }}">Devices</a>
+  </nav>
+  <div class="who">
+    <a href="/settings" class="{{ nav.on("settings") }}">{{ nav.label }}</a>
+    <form method="post" action="/logout"><button type="submit" class="link">Log out</button></form>
+  </div>
+</header>

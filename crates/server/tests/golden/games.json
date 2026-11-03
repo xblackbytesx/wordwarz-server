@@ -1,0 +1,33 @@
+[
+  {
+    "finished": true,
+    "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+    "language": "nl",
+    "mySeat": 1,
+    "myTurn": false,
+    "players": [
+      {
+        "displayName": "Mila",
+        "seat": 0,
+        "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
+        "username": "mila"
+      },
+      {
+        "displayName": "",
+        "seat": 1,
+        "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
+        "username": "mum"
+      }
+    ],
+    "rev": 23,
+    "scores": [
+      698,
+      650
+    ],
+    "turn": 1,
+    "updatedAt": "2026-11-02T23:21:19.167958Z",
+    "winners": [
+      0
+    ]
+  }
+]

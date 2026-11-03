@@ -1,0 +1,64 @@
+# LOCAL BUILD of the production image, for smoke-testing it before you tag a
+# release. Not a deployment: no reverse proxy, port published on the host.
+# Run from the repo root (reads ./.env):  make image / make up / make down
+# The deployable example (registry image, Traefik) is deploy/docker-compose.yml.
+name: wordwarz-server-local
+services:
+  wordwarz-server:
+    container_name: wordwarz-server-local
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: wordwarz-server:local
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      DATABASE_URL: postgres://wordwarz:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@wordwarz-server-local-db:5432/wordwarz
+      WORDWARZ_BIND: 0.0.0.0:8080
+      WORDWARZ_PUBLIC_URL: ${WORDWARZ_PUBLIC_URL:-}
+      WORDWARZ_PUSH_HOSTS: ${WORDWARZ_PUSH_HOSTS:-}
+      WORDWARZ_COOKIE_SECURE: ${WORDWARZ_COOKIE_SECURE:-false}
+      RUST_LOG: ${RUST_LOG:-info}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      wordwarz-server-local-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  wordwarz-server-local-db:
+    container_name: wordwarz-server-local-db
+    image: docker.io/library/postgres:17-alpine
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_READ_SEARCH
+      - FOWNER
+      - SETGID
+      - SETUID
+    environment:
+      POSTGRES_DB: wordwarz
+      POSTGRES_USER: wordwarz
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - ${WORDWARZ_DB_DIR:-../data/postgres}:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", 'pg_isready -d "$${POSTGRES_DB}" -U "$${POSTGRES_USER}"']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
