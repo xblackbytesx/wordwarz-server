@@ -1,6 +1,5 @@
-//! People: everyone on the server, invites (any member may invite), and for
-//! admins roles and disabling. Admins manage accounts, never other people's
-//! games or devices.
+//! People: everyone on the server, and for admins invites, roles and
+//! disabling. Admins manage accounts, never other people's games or devices.
 
 use askama::Template;
 use axum::Form;
@@ -12,7 +11,7 @@ use serde::Deserialize;
 use uuid::Uuid;
 
 use super::session::{AdminUser, WebUser};
-use super::{Nav, html, local_day, qr_svg};
+use super::{Nav, html, local_day, local_time, qr_svg};
 use crate::AppState;
 use crate::auth::Role;
 use crate::error::{ApiError, WebError};
@@ -69,16 +68,15 @@ pub async fn page(State(st): State<AppState>, me: WebUser) -> Page {
         .collect();
     let inv: Vec<(Uuid, String, String, DateTime<Utc>)> = sqlx::query_as(
         "SELECT id, role, note, expires_at FROM invites
-          WHERE used_at IS NULL AND expires_at > now() AND (created_by = $1 OR $2)
+          WHERE used_at IS NULL AND expires_at > now() AND $1
           ORDER BY created_at DESC",
     )
-    .bind(me.id)
     .bind(me.is_admin())
     .fetch_all(&st.pool)
     .await?;
     let invites = inv
         .into_iter()
-        .map(|(id, role, note, expires)| InviteRow { id, role, note, expires: local_day(expires, me.tz) })
+        .map(|(id, role, note, expires)| InviteRow { id, role, note, expires: local_time(expires, me.tz) })
         .collect();
     html(PeoplePage { admin: me.is_admin(), nav: Nav::new(&me, "people"), people, invites })
 }
@@ -97,32 +95,28 @@ pub struct InviteForm {
     #[serde(default)]
     role: String,
     note: String,
+    /// `scan` (10 minutes, for someone in the room) or `link` (7 days).
+    #[serde(default)]
+    validity: String,
 }
 
-/// HTMX: the link and its QR code replace the form, shown once.
+/// HTMX: the link and its QR code replace the form, shown once. Admins only.
 pub async fn create_invite(
     State(st): State<AppState>,
-    me: WebUser,
+    AdminUser(me): AdminUser,
     headers: HeaderMap,
     Form(f): Form<InviteForm>,
 ) -> Page {
     let role = Role::parse(&f.role);
-    if role == Role::Admin && !me.is_admin() {
-        return Err(ApiError::Forbidden("only an admin can invite an admin".into()).into());
-    }
-    let (token, expires) = users::create_invite(&st.pool, me.id, role, &f.note).await.map_err(ApiError::Internal)?;
+    let kind = if f.validity == "link" { users::InviteKind::Link } else { users::InviteKind::InPerson };
+    let (token, expires) =
+        users::create_invite(&st.pool, me.id, role, &f.note, kind).await.map_err(ApiError::Internal)?;
     let link = format!("{}/invite/{token}", st.public_base(&headers));
-    html(InviteCreated { qr: qr_svg(&link), link, expires: local_day(expires, me.tz), admin: role == Role::Admin })
+    html(InviteCreated { qr: qr_svg(&link), link, expires: local_time(expires, me.tz), admin: role == Role::Admin })
 }
 
-/// Your own invites; admins may withdraw any.
-pub async fn delete_invite(State(st): State<AppState>, me: WebUser, Path(id): Path<Uuid>) -> Page {
-    sqlx::query("DELETE FROM invites WHERE id = $1 AND used_at IS NULL AND (created_by = $2 OR $3)")
-        .bind(id)
-        .bind(me.id)
-        .bind(me.is_admin())
-        .execute(&st.pool)
-        .await?;
+pub async fn delete_invite(State(st): State<AppState>, _a: AdminUser, Path(id): Path<Uuid>) -> Page {
+    sqlx::query("DELETE FROM invites WHERE id = $1 AND used_at IS NULL").bind(id).execute(&st.pool).await?;
     Ok("".into_response())
 }
 

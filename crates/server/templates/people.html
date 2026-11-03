@@ -3,13 +3,15 @@
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
 <h1>People</h1>
+{% if admin %}
 <section class="card">
   <h2>Invite someone</h2>
-  <p class="muted">A one-time link and QR code, valid for 7 days. Scanning it with the app creates the account and signs that phone in: no email, no passphrase needed.</p>
+  <p class="muted">A one-time QR code and link. Scanning it with the app creates the account and signs that phone in: no email, no passphrase needed. A code to scan here and now works for 10 minutes; a link to send works for 7 days.</p>
   <div id="invite-box">
     <form method="post" action="/people/invites" hx-post="/people/invites" hx-target="#invite-box" class="inline">
       <input type="text" name="note" placeholder="Who is it for? (optional)" maxlength="80">
-      {% if admin %}<select name="role"><option value="user">Player</option><option value="admin">Admin</option></select>{% endif %}
+      <select name="validity"><option value="scan">Scan now (10 minutes)</option><option value="link">Send as link (7 days)</option></select>
+      <select name="role"><option value="user">Player</option><option value="admin">Admin</option></select>
       <button type="submit" class="primary">Create invite</button>
     </form>
   </div>
@@ -26,6 +28,7 @@
   </table>
   {% endif %}
 </section>
+{% endif %}
 <section class="card">
   <h2>Everyone</h2>
   <table class="list">

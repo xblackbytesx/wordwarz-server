@@ -53,7 +53,8 @@ async fn main() -> Result<()> {
         }
         ["invite", username, note @ ..] => {
             let by = users::id_by_username(&pool, username).await?;
-            let (token, expires) = users::create_invite(&pool, by, Role::User, &note.join(" ")).await?;
+            let (token, expires) =
+                users::create_invite(&pool, by, Role::User, &note.join(" "), users::InviteKind::Link).await?;
             let base = cfg.public_url.as_deref().unwrap_or("https://<your host>");
             println!("{base}/invite/{token}\n(one use, until {expires})");
         }

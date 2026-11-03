@@ -344,3 +344,28 @@ fn rule_errors_have_a_stable_json_shape() {
     let e = ActionError::Move(MoveError::Gap);
     assert_eq!(serde_json::to_string(&e).unwrap(), r#"{"error":"move","reason":"gap"}"#);
 }
+
+/// Reported on a device: L E U laid in a row ending at the K of an earlier
+/// vertical word must score LEUK across (the K joins the row), not be read
+/// letter by letter against the column.
+#[test]
+fn a_row_ending_at_a_letter_of_a_vertical_word() {
+    let mut g = Game::new(GameConfig::classic(Language::Dutch, 2), 1).unwrap();
+    // KOM down through the centre: K(7,7) O(8,7) M(9,7).
+    g.seats[0].rack = rack("KOMEEEE");
+    play(&mut g, 0, lay("KOM", 7, 7, Dir::Down)).unwrap();
+    // LEU across row 7, columns 4..6, ending at that K.
+    g.seats[1].rack = rack("LEUAAAA");
+    let k = play(&mut g, 1, lay("LEU", 7, 4, Dir::Across)).unwrap();
+    let TurnKind::Play { words, .. } = k else { unreachable!() };
+    assert_eq!(words.iter().map(|w| w.word.as_str()).collect::<Vec<_>>(), vec!["LEUK"]);
+
+    // Same from the other side, and with the word's last letter in the middle of a column.
+    let mut g = Game::new(GameConfig::classic(Language::Dutch, 2), 1).unwrap();
+    g.seats[0].rack = rack("OOKEEEE");
+    play(&mut g, 0, lay("OOK", 6, 7, Dir::Down)).unwrap();
+    g.seats[1].rack = rack("NEUAAAA");
+    let k = play(&mut g, 1, lay("NEU", 8, 4, Dir::Across)).unwrap();
+    let TurnKind::Play { words, .. } = k else { unreachable!() };
+    assert_eq!(words[0].word, "NEUK");
+}

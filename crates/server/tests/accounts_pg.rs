@@ -46,11 +46,21 @@ async fn joining_with_an_invite_needs_only_a_username() {
     let (s, _) = anon(&app, "/api/v1/join", &json!({ "invite": token, "username": "mila2", "device": "Tablet" })).await;
     assert_eq!(s, StatusCode::FORBIDDEN, "single use");
 
-    // A player may invite players, not admins.
-    let (s, _) = mila.call("POST", "/api/v1/invites", Some(&json!({ "admin": true }))).await;
-    assert_eq!(s, StatusCode::FORBIDDEN);
-    let (s, _) = mila.call("POST", "/api/v1/invites", Some(&json!({}))).await;
-    assert_eq!(s, StatusCode::OK);
+    // Only admins invite (decision 13).
+    for body in [json!({}), json!({ "admin": true }), json!({ "inPerson": true })] {
+        let (s, _) = mila.call("POST", "/api/v1/invites", Some(&body)).await;
+        assert_eq!(s, StatusCode::FORBIDDEN, "{body}");
+    }
+
+    // A code shown for someone in the room lives 10 minutes; a link 7 days.
+    let left = |v: &Value| {
+        let at = chrono::DateTime::parse_from_rfc3339(v["expiresAt"].as_str().unwrap()).unwrap();
+        (at.with_timezone(&chrono::Utc) - chrono::Utc::now()).num_minutes()
+    };
+    let scan: Value = dev.json("POST", "/api/v1/invites", &json!({ "inPerson": true })).await;
+    assert!((9..=10).contains(&left(&scan)), "{}", left(&scan));
+    let link: Value = dev.json("POST", "/api/v1/invites", &json!({})).await;
+    assert!((7 * 24 * 60 - 2..=7 * 24 * 60).contains(&left(&link)), "{}", left(&link));
 
     // Without a passphrase there is nothing to log in with.
     let (s, _) = anon(&app, "/api/v1/login", &json!({ "username": "mila", "passphrase": "", "device": "x" })).await;

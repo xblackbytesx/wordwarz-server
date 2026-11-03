@@ -153,8 +153,13 @@ Settled 2026-11-02 (do not reopen):
     (Argon2id, 10+ characters) are optional. No email, real name, birth date
     or phone, ever. Login answers the same for unknown, disabled,
     passphrase-less and wrong, and always pays one Argon2 verification.
-13. **Invite-only; any member invites** (admins may also invite admins). A
-    one-time link with a QR code, 7 days. In the app, `POST /join` with the
+13. **Invite-only; only admins invite** (changed 2026-11-03 from "any
+    member", so children cannot bring in classmates). A one-time link with a
+    QR code: a code shown for someone in the room (`inPerson`, the app's
+    default and the website's "Scan now") lives 10 minutes, so a photo of it
+    is soon useless; a link to send by message lives 7 days. The app asks
+    for the owner's fingerprint or screen lock before it shows any invite or
+    device sign-in code. In the app, `POST /join` with the
     scanned invite and a username creates the account and a device token at
     once (no passphrase). On the website a passphrase is required, since it is
     how the website logs in.
@@ -219,7 +224,7 @@ Settled 2026-11-02 (do not reopen):
 | `POST /logout` | revoke this device's token (and its push endpoint) |
 | `GET/PATCH/DELETE /me`, `GET /me/export` | profile, display name, deletion, export |
 | `GET /people` | everyone, to pick opponents |
-| `POST /invites` | `{note?, admin?}` -> `{url, expiresAt}` |
+| `POST /invites` | admins only; `{note?, admin?, inPerson?}` -> `{url, expiresAt}` (10 minutes in person, else 7 days) |
 | `GET /games`, `POST /games` | list; create `{config, seats: [{userId, rackSize?, scorePercent?, team?}], turnTimerHours?}` |
 | `GET /games/{id}` | `{id, rev, players, turnTimerHours, turnStartedAt, createdAt, view}` |
 | `POST /games/{id}/actions` | a core `Action` -> `{game, turn?, hint?}` |

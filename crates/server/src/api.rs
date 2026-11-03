@@ -275,12 +275,17 @@ async fn people(State(st): State<AppState>, _u: AuthUser) -> Result<Json<Vec<Per
 }
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 struct InviteRequest {
     #[serde(default)]
     note: String,
-    /// Only admins may invite admins.
+    /// The new account is an admin too.
     #[serde(default)]
     admin: bool,
+    /// Shown on this screen for someone in the room: valid 10 minutes
+    /// instead of 7 days.
+    #[serde(default)]
+    in_person: bool,
 }
 
 #[derive(Serialize)]
@@ -290,18 +295,19 @@ struct InviteLink {
     expires_at: DateTime<Utc>,
 }
 
-/// Any member may invite (AGENTS.md: onboarding).
+/// Admins only (AGENTS.md decision 13).
 async fn invite(
     State(st): State<AppState>,
     u: AuthUser,
     headers: HeaderMap,
     Json(r): Json<InviteRequest>,
 ) -> Result<Json<InviteLink>, ApiError> {
-    if r.admin && u.role != Role::Admin {
-        return Err(ApiError::Forbidden("only an admin can invite an admin".into()));
+    if u.role != Role::Admin {
+        return Err(ApiError::Forbidden("only an admin can invite people".into()));
     }
     let role = if r.admin { Role::Admin } else { Role::User };
-    let (token, expires_at) = users::create_invite(&st.pool, u.id, role, &r.note).await?;
+    let kind = if r.in_person { users::InviteKind::InPerson } else { users::InviteKind::Link };
+    let (token, expires_at) = users::create_invite(&st.pool, u.id, role, &r.note, kind).await?;
     Ok(Json(InviteLink { url: format!("{}/invite/{token}", st.public_base(&headers)), expires_at }))
 }
 

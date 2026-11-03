@@ -9,7 +9,26 @@ use uuid::Uuid;
 use crate::auth::{self, INVITE_PREFIX, LINK_PREFIX, Role};
 
 pub const MIN_PASSWORD: usize = 10;
+/// How long an invite works. A code shown on a screen for someone in the room
+/// lives minutes, so a photo of it is useless soon after; a link sent by
+/// message lives days.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum InviteKind {
+    InPerson,
+    Link,
+}
+
+impl InviteKind {
+    pub fn lifetime(self) -> Duration {
+        match self {
+            InviteKind::InPerson => Duration::minutes(IN_PERSON_MINUTES),
+            InviteKind::Link => Duration::days(INVITE_DAYS),
+        }
+    }
+}
+
 pub const INVITE_DAYS: i64 = 7;
+pub const IN_PERSON_MINUTES: i64 = 10;
 pub const LINK_MINUTES: i64 = 10;
 
 /// Lowercase a-z, 0-9 and `_`, 3 to 20 characters, starting with a letter.
@@ -98,9 +117,16 @@ pub async fn new_token(pool: &PgPool, user_id: Uuid, label: &str) -> Result<Stri
 }
 
 /// Creates a one-time invite; returns the plaintext token for the link.
-pub async fn create_invite(pool: &PgPool, by: Uuid, role: Role, note: &str) -> Result<(String, DateTime<Utc>)> {
+/// Only admins invite (AGENTS.md decision 13); callers check the role.
+pub async fn create_invite(
+    pool: &PgPool,
+    by: Uuid,
+    role: Role,
+    note: &str,
+    kind: InviteKind,
+) -> Result<(String, DateTime<Utc>)> {
     let token = auth::new_secret(INVITE_PREFIX);
-    let expires = Utc::now() + Duration::days(INVITE_DAYS);
+    let expires = Utc::now() + kind.lifetime();
     sqlx::query(
         "INSERT INTO invites (id, token_sha256, role, note, created_by, expires_at) VALUES ($1, $2, $3, $4, $5, $6)",
     )

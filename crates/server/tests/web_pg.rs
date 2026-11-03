@@ -115,11 +115,15 @@ async fn cross_site_writes_are_refused() {
 #[tokio::test]
 async fn web_invites_show_a_qr_code_and_make_accounts() {
     let Some(db) = Db::new().await else { return };
-    db.person("dad", Role::User).await;
+    db.person("kid", Role::User).await;
+    let mut kid = Browser::logged_in(db.app(), "kid").await;
+    let r = kid.htmx_post("/people/invites", &[("note", "Oma")]).await;
+    assert_eq!(r.status, StatusCode::FORBIDDEN, "only admins invite");
+    assert!(!kid.get("/people").await.body.contains("Invite someone"), "players do not see the form");
+
+    db.person("dad", Role::Admin).await;
     let mut dad = Browser::logged_in(db.app(), "dad").await;
-    let r = dad.htmx_post("/people/invites", &[("note", "Oma"), ("role", "admin")]).await;
-    assert_eq!(r.status, StatusCode::FORBIDDEN, "players cannot invite admins");
-    let r = dad.htmx_post("/people/invites", &[("note", "Oma")]).await;
+    let r = dad.htmx_post("/people/invites", &[("note", "Oma"), ("validity", "link")]).await;
     assert_eq!(r.status, StatusCode::OK, "{}", r.body);
     assert!(r.body.contains("<svg"), "a QR code");
     assert_csp_clean("invite_created", &r.body);
@@ -152,6 +156,13 @@ async fn web_invites_show_a_qr_code_and_make_accounts() {
     let r = oma.post("/settings/delete", &[("confirm", "oma_riet")]).await;
     assert_eq!(r.status, StatusCode::SEE_OTHER);
     let n: i64 = sqlx::query_scalar("SELECT count(*) FROM users").fetch_one(&db.pool).await.unwrap();
-    assert_eq!(n, 1);
+    assert_eq!(n, 2, "kid and dad stay");
+
+    // The default on the website is a code to scan now: 10 minutes.
+    let r = dad.htmx_post("/people/invites", &[("note", "Opa")]).await;
+    assert_eq!(r.status, StatusCode::OK);
+    let short: chrono::DateTime<chrono::Utc> =
+        sqlx::query_scalar("SELECT expires_at FROM invites WHERE note = 'Opa'").fetch_one(&db.pool).await.unwrap();
+    assert!((short - chrono::Utc::now()).num_minutes() <= 10);
     db.drop().await;
 }
