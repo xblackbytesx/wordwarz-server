@@ -38,6 +38,7 @@ pub fn routes() -> Router<AppState> {
         .route("/people/{id}/role", post(people::set_role))
         .route("/people/{id}/disable", post(people::disable))
         .route("/people/{id}/enable", post(people::enable))
+        .route("/people/{id}/device-code", post(people::device_code))
         .route("/devices", get(devices::page))
         .route("/devices/link", post(devices::create_link))
         .route("/devices/{id}/revoke", post(devices::revoke))

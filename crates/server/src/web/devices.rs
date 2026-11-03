@@ -63,7 +63,7 @@ struct LinkCreated {
 
 /// HTMX: a one-time QR code (10 minutes) that signs a device in to this account.
 pub async fn create_link(State(st): State<AppState>, user: WebUser, headers: HeaderMap) -> Page {
-    let (code, expires) = users::create_link(&st.pool, user.id).await.map_err(ApiError::Internal)?;
+    let (code, expires) = users::create_link(&st.pool, user.id, user.id).await.map_err(ApiError::Internal)?;
     let url = format!("{}/link/{code}", st.public_base(&headers));
     html(LinkCreated { qr: qr_svg(&url), expires: local_time(expires, user.tz) })
 }

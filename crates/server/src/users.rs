@@ -214,18 +214,23 @@ pub async fn accept_invite(
     Ok(id)
 }
 
-/// A one-time code that signs another device in to `user` (shown as a QR code).
-pub async fn create_link(pool: &PgPool, user: Uuid) -> Result<(String, DateTime<Utc>)> {
+/// A one-time code that signs another device in to `user` (shown as a QR
+/// code). `by` made it: the person themselves, or an admin restoring the
+/// account onto a new phone.
+pub async fn create_link(pool: &PgPool, user: Uuid, by: Uuid) -> Result<(String, DateTime<Utc>)> {
     let code = auth::new_secret(LINK_PREFIX);
     let expires = Utc::now() + Duration::minutes(LINK_MINUTES);
     sqlx::query("DELETE FROM device_links WHERE expires_at < now()").execute(pool).await?;
-    sqlx::query("INSERT INTO device_links (id, code_sha256, user_id, expires_at) VALUES ($1, $2, $3, $4)")
-        .bind(Uuid::new_v4())
-        .bind(auth::token_hash(&code))
-        .bind(user)
-        .bind(expires)
-        .execute(pool)
-        .await?;
+    sqlx::query(
+        "INSERT INTO device_links (id, code_sha256, user_id, expires_at, created_by) VALUES ($1, $2, $3, $4, $5)",
+    )
+    .bind(Uuid::new_v4())
+    .bind(auth::token_hash(&code))
+    .bind(user)
+    .bind(expires)
+    .bind(by)
+    .execute(pool)
+    .await?;
     Ok((code, expires))
 }
 
@@ -247,6 +252,21 @@ pub async fn claim_link(pool: &PgPool, code: &str, device: &str) -> Result<Optio
     .await?;
     let Some(user) = user else { return Ok(None) };
     Ok(Some((user, new_token(pool, user, &label).await?)))
+}
+
+/// Signs `user` out everywhere: every device token is revoked and its push
+/// endpoint dropped. For a lost or stolen phone. Returns how many devices.
+pub async fn revoke_devices(pool: &PgPool, user: Uuid) -> Result<u64, sqlx::Error> {
+    sqlx::query("DELETE FROM push_endpoints e USING api_tokens t WHERE t.id = e.token_id AND t.user_id = $1")
+        .bind(user)
+        .execute(pool)
+        .await?;
+    let n = sqlx::query("UPDATE api_tokens SET revoked_at = now() WHERE user_id = $1 AND revoked_at IS NULL")
+        .bind(user)
+        .execute(pool)
+        .await?
+        .rows_affected();
+    Ok(n)
 }
 
 /// Active admins other than `except`. Guards against locking everyone out.

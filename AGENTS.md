@@ -259,6 +259,21 @@ Settled 2026-11-02 (do not reopen):
 5. Encrypted pushes need a WebPush-capable distributor; if a family phone's
    distributor sends no keys, consider refusing plaintext endpoints.
 
+### Restoring an account (decided 2026-11-04)
+
+28. **Admins can sign someone in on a new phone** when the old one is gone
+    and they have no passphrase: People, New phone, on the website only (the
+    app has no admin People screen yet). The admin re-enters their own
+    passphrase (the website's equivalent of the app's fingerprint check) and
+    gets the person's one-time device-link code (10 minutes, QR plus a link
+    to send), optionally after signing that person out on every device
+    (`users::revoke_devices`, for a lost phone). `device_links.created_by`
+    records who made each code, and the action is logged. Disabled accounts
+    must be enabled first. This lets admins sign in as anyone, rack included:
+    accepted for a family server, which is why it needs the admin's
+    passphrase and lives 10 minutes. Phone-only games (pass-and-play, the
+    computer) never reach the server and are not restored.
+
 ### FFI and android-core (decided 2026-11-02)
 
 25. **JSON across the boundary.** The app gets views, actions, configs and

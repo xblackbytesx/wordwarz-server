@@ -10,7 +10,7 @@ use chrono::{DateTime, Utc};
 use serde::Deserialize;
 use uuid::Uuid;
 
-use super::session::{AdminUser, WebUser};
+use super::session::{self, AdminUser, WebUser};
 use super::{Nav, html, local_day, local_time, qr_svg};
 use crate::AppState;
 use crate::auth::Role;
@@ -152,6 +152,62 @@ pub async fn disable(State(st): State<AppState>, AdminUser(me): AdminUser, Path(
         .await?;
     sqlx::query("DELETE FROM web_sessions WHERE user_id = $1").bind(id).execute(&st.pool).await?;
     Ok(Redirect::to("/people").into_response())
+}
+
+#[derive(Template)]
+#[template(path = "device_code.html")]
+struct DeviceCode {
+    id: Uuid,
+    name: String,
+    url: String,
+    qr: String,
+    expires: String,
+    signed_out: u64,
+}
+
+#[derive(Deserialize)]
+pub struct DeviceCodeForm {
+    passphrase: String,
+    #[serde(default)]
+    sign_out: Option<String>,
+}
+
+/// HTMX: a one-time sign-in code for someone else's account, for their new
+/// phone when the old one is gone and they have no passphrase. The admin
+/// confirms with their own passphrase (the website's equivalent of the
+/// app's fingerprint check). Optionally signs the person out on every
+/// current device first, for a lost or stolen phone.
+pub async fn device_code(
+    State(st): State<AppState>,
+    AdminUser(me): AdminUser,
+    headers: HeaderMap,
+    Path(id): Path<Uuid>,
+    Form(f): Form<DeviceCodeForm>,
+) -> Page {
+    if session::check_login(&st.pool, &me.username, &f.passphrase).await?.is_none() {
+        tokio::time::sleep(std::time::Duration::from_millis(400)).await;
+        return Err(ApiError::Forbidden("that is not your passphrase".into()).into());
+    }
+    let person: Option<(String, String)> =
+        sqlx::query_as("SELECT username, display_name FROM users WHERE id = $1 AND disabled_at IS NULL")
+            .bind(id)
+            .fetch_optional(&st.pool)
+            .await?;
+    let Some((username, display)) = person else {
+        return Err(ApiError::bad("no active account to sign in (enable it first)").into());
+    };
+    let signed_out = if f.sign_out.is_some() { users::revoke_devices(&st.pool, id).await? } else { 0 };
+    let (code, expires) = users::create_link(&st.pool, id, me.id).await.map_err(ApiError::Internal)?;
+    tracing::info!(admin = %me.username, person = %username, signed_out, "admin made a sign-in code");
+    let url = format!("{}/link/{code}", st.public_base(&headers));
+    html(DeviceCode {
+        id,
+        name: if display.is_empty() { username } else { display },
+        qr: qr_svg(&url),
+        url,
+        expires: local_time(expires, me.tz),
+        signed_out,
+    })
 }
 
 pub async fn enable(State(st): State<AppState>, _a: AdminUser, Path(id): Path<Uuid>) -> Page {

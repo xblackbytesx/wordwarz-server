@@ -132,7 +132,7 @@ struct Link {
 
 /// A one-time QR code that signs another device in to this account.
 async fn create_link(State(st): State<AppState>, u: AuthUser, headers: HeaderMap) -> Result<Json<Link>, ApiError> {
-    let (code, expires_at) = users::create_link(&st.pool, u.id).await?;
+    let (code, expires_at) = users::create_link(&st.pool, u.id, u.id).await?;
     Ok(Json(Link { url: format!("{}/link/{code}", st.public_base(&headers)), expires_at }))
 }
 

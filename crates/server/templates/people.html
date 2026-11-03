@@ -45,6 +45,19 @@
             {% if p.admin %}<input type="hidden" name="role" value="user"><button type="submit" class="small">Make player</button>
             {% else %}<input type="hidden" name="role" value="admin"><button type="submit" class="small">Make admin</button>{% endif %}
           </form>
+          {% if !p.me && !p.disabled %}
+          <details class="new-phone">
+            <summary class="button small">New phone</summary>
+            <div id="code-{{ p.id }}">
+              <form method="post" action="/people/{{ p.id }}/device-code" hx-post="/people/{{ p.id }}/device-code" hx-target="#code-{{ p.id }}" class="stack">
+                <p class="hint">A one-time sign-in code for {{ p.username }}'s new phone. Confirm with your own passphrase.</p>
+                <input type="password" name="passphrase" placeholder="Your passphrase" autocomplete="current-password" required>
+                <label class="check"><input type="checkbox" name="sign_out" value="1"> Sign them out on their other devices (lost phone)</label>
+                <button type="submit" class="small primary">Show code</button>
+              </form>
+            </div>
+          </details>
+          {% endif %}
           {% if !p.me %}
             {% if p.disabled %}
             <form method="post" action="/people/{{ p.id }}/enable"><button type="submit" class="small">Enable</button></form>

@@ -166,3 +166,53 @@ async fn web_invites_show_a_qr_code_and_make_accounts() {
     assert!((short - chrono::Utc::now()).num_minutes() <= 10);
     db.drop().await;
 }
+
+#[tokio::test]
+async fn an_admin_restores_an_account_onto_a_new_phone() {
+    let Some(db) = Db::new().await else { return };
+    let mum = db.person("mum", Role::Admin).await;
+    db.person("dad", Role::User).await;
+    // A child who joined by QR code: no passphrase, one phone.
+    let kid = wordwarz_server::users::create(&db.pool, "kid", Role::User).await.unwrap();
+    let old_phone = db.device(kid, "Old phone").await;
+    let path = format!("/people/{kid}/device-code");
+
+    let mut dad = Browser::logged_in(db.app(), "dad").await;
+    let r = dad.htmx_post(&path, &[("passphrase", PASSPHRASE)]).await;
+    assert_eq!(r.status, StatusCode::FORBIDDEN, "admins only");
+
+    let mut mum_web = Browser::logged_in(db.app(), "mum").await;
+    assert!(mum_web.get("/people").await.body.contains("New phone"));
+    let r = mum_web.htmx_post(&path, &[("passphrase", "not my passphrase")]).await;
+    assert_eq!(r.status, StatusCode::FORBIDDEN, "the admin confirms with their own passphrase");
+
+    let r = mum_web.htmx_post(&path, &[("passphrase", PASSPHRASE), ("sign_out", "1")]).await;
+    assert_eq!(r.status, StatusCode::OK, "{}", r.body);
+    assert!(r.body.contains("<svg") && r.body.contains("signed out on 1 device"), "{}", r.body);
+    let (s, _) = old_phone.call::<()>("GET", "/api/v1/me", None).await;
+    assert_eq!(s, StatusCode::UNAUTHORIZED, "the lost phone is signed out");
+
+    // The new phone scans the code: the same account, once.
+    let link = r.body.split(&format!("<code id=\"device-link-{kid}\">")).nth(1).unwrap().split('<').next().unwrap();
+    let code = link.rsplit('/').next().unwrap();
+    let app = db.app();
+    let (s, v) =
+        common::anon(&app, "/api/v1/link/claim", &serde_json::json!({ "code": code, "device": "New phone" })).await;
+    assert_eq!(s, StatusCode::OK, "{v}");
+    assert_eq!(v["me"]["username"], "kid");
+    let (s, _) =
+        common::anon(&app, "/api/v1/link/claim", &serde_json::json!({ "code": code, "device": "Other" })).await;
+    assert_eq!(s, StatusCode::FORBIDDEN, "single use");
+    let by: Option<uuid::Uuid> = sqlx::query_scalar("SELECT created_by FROM device_links WHERE user_id = $1")
+        .bind(kid)
+        .fetch_one(&db.pool)
+        .await
+        .unwrap();
+    assert_eq!(by, Some(mum), "the record says who made it");
+
+    // Disabled accounts first need enabling.
+    sqlx::query("UPDATE users SET disabled_at = now() WHERE id = $1").bind(kid).execute(&db.pool).await.unwrap();
+    let r = mum_web.htmx_post(&path, &[("passphrase", PASSPHRASE)]).await;
+    assert_eq!(r.status, StatusCode::BAD_REQUEST);
+    db.drop().await;
+}

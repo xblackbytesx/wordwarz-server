@@ -200,3 +200,7 @@ ol.moves .num { color: var(--muted); float: right; }
 .qr svg { width: 240px; height: 240px; border-radius: 8px; }
 .center { text-align: center; }
 @media (max-width: 900px) { .game { grid-template-columns: 1fr; } }
+details.new-phone { display: inline-block; }
+details.new-phone summary { list-style: none; }
+details.new-phone summary::-webkit-details-marker { display: none; }
+details.new-phone[open] { display: block; margin-top: 0.5rem; max-width: 320px; }

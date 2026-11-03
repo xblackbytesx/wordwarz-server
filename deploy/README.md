@@ -71,6 +71,15 @@ People, and create an invite for each family member. Scanning the QR code with
 the app creates the account and signs that phone in; children never need a
 passphrase. `wordwarz-server invite mum` prints an invite link from the shell.
 
+## A lost phone
+
+Someone without a passphrase whose phone is gone: on the website, People,
+**New phone** next to their name. Confirm with your own passphrase, tick
+"Sign them out on their other devices" if the old phone was lost, and let
+them scan the code (10 minutes) with Play online, Scan a code. Their online
+games and scores are all on the server; games played only on the old phone
+are not.
+
 ## Upgrades
 
 Migrations run at start. Pin `WORDWARZ_VERSION` to a release, pull, restart.
