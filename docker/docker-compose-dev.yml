@@ -1,0 +1,58 @@
+# DEVELOPMENT + TESTS: source bind-mounted, bacon rebuilds on change.
+#   make dev | make test | make lint | make lexicons | make android-core
+# Not for deployment; see deploy/docker-compose.yml for that.
+services:
+  wordwarz-server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    container_name: wordwarz-server-dev
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      DATABASE_URL: postgres://wordwarz:wordwarz@db:5432/wordwarz
+      WORDWARZ_TEST_DATABASE_URL: postgres://wordwarz:wordwarz@db:5432/postgres
+      WORDWARZ_BIND: 0.0.0.0:8080
+      WORDWARZ_COOKIE_SECURE: "false"
+      WORDWARZ_PUBLIC_URL: ${WORDWARZ_PUBLIC_URL:-}
+      WORDWARZ_PUSH_HOSTS: ${WORDWARZ_PUSH_HOSTS:-}
+      RUST_LOG: ${RUST_LOG:-debug}
+    volumes:
+      - ..:/app
+      - cargo-registry:/usr/local/cargo/registry
+      - target:/app/target
+
+  android-core:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.android-core
+    image: wordwarz-android-core
+    profiles: ["android"]
+    volumes:
+      - ..:/app
+      - cargo-registry:/usr/local/cargo/registry
+      - android-target:/app/target
+
+  db:
+    image: postgres:17
+    container_name: wordwarz-server-dev-db
+    environment:
+      POSTGRES_USER: wordwarz
+      POSTGRES_PASSWORD: wordwarz
+      POSTGRES_DB: wordwarz
+    volumes:
+      - db-dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wordwarz"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  cargo-registry:
+  target:
+  android-target:
+  db-dev:

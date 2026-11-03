@@ -1,0 +1,62 @@
+{
+  "headToHead": [
+    {
+      "a": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
+      "aWins": 1,
+      "b": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
+      "bWins": 0,
+      "draws": 0
+    }
+  ],
+  "players": [
+    {
+      "avgScore": 698,
+      "bestMove": 123,
+      "bestWord": "SNOERDE",
+      "bingos": 4,
+      "displayName": "Mila",
+      "games": 1,
+      "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
+      "username": "mila",
+      "winRate": 100,
+      "wins": 1
+    },
+    {
+      "avgScore": 650,
+      "bestMove": 90,
+      "bestWord": "PLENS",
+      "bingos": 0,
+      "displayName": "",
+      "games": 1,
+      "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
+      "username": "mum",
+      "winRate": 0,
+      "wins": 0
+    }
+  ],
+  "recent": [
+    {
+      "finishedAt": "2026-11-02T23:21:19.167958Z",
+      "gameId": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+      "language": "nl",
+      "seats": [
+        {
+          "displayName": "Mila",
+          "score": 698,
+          "team": null,
+          "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
+          "username": "mila",
+          "won": true
+        },
+        {
+          "displayName": "",
+          "score": 650,
+          "team": null,
+          "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
+          "username": "mum",
+          "won": false
+        }
+      ]
+    }
+  ]
+}

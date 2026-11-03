@@ -1,0 +1,29 @@
+[workspace]
+resolver = "3"
+# core: the rules engine (board, tiles, lexicons, move validation and scoring,
+# the game state machine, the move generator). Pure, no IO: the server applies
+# it and the app previews with it, so both always agree.
+# lexicon: the tool that turns the pinned word lists into lexicons/*.fst and
+# derives the tile sets (make lexicons). Never part of the server image.
+# server: accounts, games, turns, nudges, scoreboard; /api/v1 and the website.
+# ffi: UniFFI bindings for the app (make android-core); JSON in and out, so
+# the wire shapes live only in core.
+members = ["crates/core", "crates/ffi", "crates/lexicon", "crates/server"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+wordwarz-core = { path = "crates/core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+fst = "0.4"
+anyhow = "1"
+
+[profile.release]
+lto = "thin"
+strip = true

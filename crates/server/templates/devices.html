@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Devices · WordWarZ{% endblock %}
+{% block nav %}{% include "nav.html" %}{% endblock %}
+{% block content %}
+<h1>Devices</h1>
+<section class="card">
+  <h2>Sign in another device</h2>
+  <p class="muted">Makes a QR code for the app on a new phone or tablet. It works once, for 10 minutes.</p>
+  <div id="link-box">
+    <form method="post" action="/devices/link" hx-post="/devices/link" hx-target="#link-box"><button type="submit" class="primary">Show a code</button></form>
+  </div>
+</section>
+<section class="card">
+  <h2>Your devices</h2>
+  {% if tokens.is_empty() %}
+  <p class="muted">No devices yet.</p>
+  {% else %}
+  <table class="list">
+    <thead><tr><th>Device</th><th>Since</th><th>Last seen</th><th>Push</th><th></th></tr></thead>
+    <tbody>
+    {% for t in tokens %}
+      <tr id="token-{{ t.id }}">
+        <td>{{ t.label }}</td><td>{{ t.created }}</td><td>{{ t.last_used }}</td><td>{% if t.push %}on{% else %}off{% endif %}</td>
+        <td class="actions"><form method="post" action="/devices/{{ t.id }}/revoke" hx-post="/devices/{{ t.id }}/revoke" hx-target="#token-{{ t.id }}" hx-swap="outerHTML" hx-confirm="Sign {{ t.label }} out?"><button type="submit" class="danger small">Sign out</button></form></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+# --- Rust build output ---
+/target
+# make android-core output (the app reads it from here)
+/dist
+
+# --- Local data (make up) ---
+/data
+
+# --- IDE / assistant tooling ---
+# Local scratch directories various editors and coding assistants create in the
+# repo root. None of them belong in the history.
+.idea/
+.vscode/
+.fleet/
+.claude/
+.cursor/
+.aider*
+.continue/
+.windsurf/
+*.iml
+*.swp
+*~
+
+# --- Secrets / local config ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# --- Database dumps ---
+*.dump
+*.sql.gz
+backups/
+
+# --- OS noise / logs ---
+.DS_Store
+Thumbs.db
+*.log

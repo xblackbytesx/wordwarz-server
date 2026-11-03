@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Game · WordWarZ{% endblock %}
+{% block nav %}{% include "nav.html" %}{% endblock %}
+{% block main_class %}wide{% endblock %}
+{% block content %}
+<h1>{{ status }} <span class="muted small-title">{{ language }}</span></h1>
+<div class="game">
+  <div>
+    <div class="board s{{ size }}" role="grid" aria-label="Board after move {{ step }}">
+      {% for row in rows %}{% for c in row %}<div class="{{ c.class }}">{{ c.text }}{% if !c.value.is_empty() %}<sub>{{ c.value }}</sub>{% endif %}</div>{% endfor %}{% endfor %}
+    </div>
+    <div class="stepper">
+      {% if let Some(p) = prev %}<a href="/games/{{ id }}?move=0" class="button small">First</a><a href="/games/{{ id }}?move={{ p }}" class="button small">Back</a>{% endif %}
+      <span>Move {{ step }} of {{ total }}</span>
+      {% if let Some(n) = next %}<a href="/games/{{ id }}?move={{ n }}" class="button small">Next</a><a href="/games/{{ id }}" class="button small">Latest</a>{% endif %}
+    </div>
+  </div>
+  <aside>
+    <section class="card">
+      <h2>Score</h2>
+      <table class="list">
+        <tbody>
+        {% for s in seats %}
+          <tr{% if s.turn %} class="current"{% endif %}><td>{% if s.winner %}🏆 {% endif %}{{ s.name }}{% if s.resigned %} <span class="badge warn">resigned</span>{% endif %}{% if s.turn %} <span class="badge ok">to play</span>{% endif %}</td><td class="num">{{ s.score }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p class="hint">{{ bag }} tiles in the bag.</p>
+    </section>
+    <section class="card">
+      <h2>Moves</h2>
+      {% if moves.is_empty() %}<p class="muted">No moves yet.</p>{% else %}
+      <ol class="moves">
+        {% for m in moves %}
+        <li{% if m.current %} class="current"{% endif %}><a href="/games/{{ id }}?move={{ m.n }}">{{ m.who }}: {{ m.what }}</a> <span class="num">{{ m.score }}</span></li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

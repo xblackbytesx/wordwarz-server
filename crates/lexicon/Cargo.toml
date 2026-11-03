@@ -1,0 +1,13 @@
+[package]
+name = "wordwarz-lexicon"
+description = "Builds lexicons/*.fst from the pinned word lists and derives the tile sets"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+wordwarz-core.workspace = true
+fst.workspace = true
+anyhow.workspace = true
