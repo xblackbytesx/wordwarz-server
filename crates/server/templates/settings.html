@@ -2,15 +2,15 @@
 {% block title %}Settings · WordWarZ{% endblock %}
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
-<h1>Settings</h1>
-{% if let Some(n) = notice %}<p class="ok">{{ n }}</p>{% endif %}
-<div class="cols">
-<section class="card">
+<header class="page-header"><h1>Settings</h1></header>
+{% if let Some(n) = notice %}<p class="notice ok">{{ n }}</p>{% endif %}
+<div class="panels">
+<section class="panel">
   <h2>Profile</h2>
-  <form method="post" action="/settings/profile" class="stack">
-    <label>Username <input type="text" value="{{ username }}" disabled></label>
-    <label>Display name <span class="hint">Optional; shown instead of your username.</span> <input type="text" name="name" value="{{ name }}" maxlength="30"></label>
-    <label>Time zone <span class="hint">Dates on these pages use it.</span>
+  <form method="post" action="/settings/profile" class="form">
+    <label class="field">Username <input type="text" value="{{ username }}" disabled></label>
+    <label class="field">Display name <span class="hint">Optional; shown instead of your username.</span> <input type="text" name="name" value="{{ name }}" maxlength="30"></label>
+    <label class="field">Time zone <span class="hint">Dates on these pages use it.</span>
       <select name="tz">
         {% for z in zones %}<option value="{{ z }}"{% if *z == tz %} selected{% endif %}>{{ z }}</option>{% endfor %}
       </select>
@@ -18,24 +18,26 @@
     <button type="submit">Save</button>
   </form>
 </section>
-<section class="card">
+<section class="panel">
   <h2>Passphrase</h2>
-  <form method="post" action="/settings/passphrase" class="stack">
-    <label>Current passphrase <input type="password" name="current" autocomplete="current-password" required></label>
-    <label>New passphrase <input type="password" name="passphrase" minlength="10" autocomplete="new-password" required></label>
-    <label>New passphrase again <input type="password" name="passphrase2" minlength="10" autocomplete="new-password" required></label>
+  <form method="post" action="/settings/passphrase" class="form">
+    <label class="field">Current passphrase <input type="password" name="current" autocomplete="current-password" required></label>
+    <label class="field">New passphrase <input type="password" name="passphrase" minlength="10" autocomplete="new-password" required></label>
+    <label class="field">New passphrase again <input type="password" name="passphrase2" minlength="10" autocomplete="new-password" required></label>
     <button type="submit">Change passphrase</button>
   </form>
 </section>
 </div>
-<section class="card">
-  <h2>Your data</h2>
-  <p>This server keeps your username, display name, passphrase hash, devices and games. Nothing else, and nothing leaves it.</p>
-  <p><a href="/settings/export" class="button" hx-boost="false">Download everything (JSON)</a></p>
+<section class="panel">
+  <header class="panel-header">
+    <h2>Your data</h2>
+    <p class="meta">This server keeps your username, display name, passphrase hash, devices and games. Nothing else, and nothing leaves it.</p>
+  </header>
+  <a href="/settings/export" class="button" hx-boost="false">Download everything (JSON)</a>
   <h3>Delete account</h3>
-  <p class="muted">Running games are resigned; finished games stay on the scoreboard as "deleted". This cannot be undone.</p>
-  <form method="post" action="/settings/delete" class="inline" data-confirm="Delete your account for good?">
-    <input type="text" name="confirm" placeholder="Type {{ username }} to confirm" autocomplete="off" required>
+  <p class="meta">Running games are resigned; finished games stay on the scoreboard as "deleted". This cannot be undone.</p>
+  <form method="post" action="/settings/delete" class="field-row" data-confirm="Delete your account for good?">
+    <input type="text" name="confirm" placeholder="Type {{ username }} to confirm" autocomplete="off" required aria-label="Type your username to confirm">
     <button type="submit" class="danger">Delete my account</button>
   </form>
 </section>

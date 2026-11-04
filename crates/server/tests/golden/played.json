@@ -1,23 +1,23 @@
 {
   "game": {
-    "createdAt": "2026-11-02T23:21:18.459220Z",
-    "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+    "createdAt": "2026-11-04T00:02:47.208343Z",
+    "id": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
     "players": [
       {
-        "displayName": "Mila",
+        "displayName": "Mary",
         "seat": 0,
-        "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-        "username": "mila"
+        "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+        "username": "mary"
       },
       {
-        "displayName": "",
+        "displayName": "Sheldon",
         "seat": 1,
-        "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-        "username": "mum"
+        "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+        "username": "sheldon"
       }
     ],
     "rev": 2,
-    "turnStartedAt": "2026-11-02T23:21:18.503496Z",
+    "turnStartedAt": "2026-11-04T00:02:47.260126Z",
     "turnTimerHours": 72,
     "view": {
       "bagCount": 80,
@@ -46,41 +46,7 @@
           null,
           null,
           {
-            "letter": "K"
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          {
-            "letter": "E"
-          },
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          {
-            "letter": "P"
+            "letter": "W"
           },
           null,
           null,
@@ -131,6 +97,40 @@
           null,
           null,
           {
+            "letter": "K"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
+            "letter": "L"
+          },
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          {
             "letter": "E"
           },
           null,
@@ -148,7 +148,7 @@
           null,
           null,
           {
-            "letter": "N"
+            "letter": "S"
           },
           null,
           null,
@@ -281,11 +281,11 @@
         "language": "nl",
         "players": [
           {
-            "rackSize": 8,
+            "rackSize": 7,
             "scorePercent": 100
           },
           {
-            "rackSize": 7,
+            "rackSize": 8,
             "scorePercent": 100
           }
         ],
@@ -298,12 +298,12 @@
           "bounties": [],
           "kind": "play",
           "score": {
-            "base": 66,
+            "base": 76,
             "bingo": 40,
             "bounty": 0,
             "comeback": 0,
             "handicap": 0,
-            "total": 66
+            "total": 76
           },
           "seat": 0,
           "tiles": [
@@ -313,7 +313,7 @@
                 "row": 1
               },
               "tile": {
-                "letter": "K"
+                "letter": "W"
               }
             },
             {
@@ -331,7 +331,7 @@
                 "row": 3
               },
               "tile": {
-                "letter": "P"
+                "letter": "R"
               }
             },
             {
@@ -340,7 +340,7 @@
                 "row": 4
               },
               "tile": {
-                "letter": "E"
+                "letter": "K"
               }
             },
             {
@@ -349,7 +349,7 @@
                 "row": 5
               },
               "tile": {
-                "letter": "R"
+                "letter": "L"
               }
             },
             {
@@ -367,19 +367,19 @@
                 "row": 7
               },
               "tile": {
-                "letter": "N"
+                "letter": "S"
               }
             }
           ],
           "words": [
             {
               "dir": "down",
-              "score": 26,
+              "score": 36,
               "start": {
                 "col": 7,
                 "row": 1
               },
-              "word": "KEPEREN"
+              "word": "WERKLES"
             }
           ]
         }
@@ -618,23 +618,22 @@
         {
           "hintsLeft": 2,
           "rack": [
-            "X",
-            "W",
-            "A",
-            "K",
+            "P",
+            "N",
             "E",
-            "R",
-            "O",
-            "P"
+            "M",
+            "P",
+            "Z",
+            "G"
           ],
-          "rackCount": 8,
+          "rackCount": 7,
           "resigned": false,
-          "score": 66
+          "score": 76
         },
         {
           "hintsLeft": 3,
           "rack": null,
-          "rackCount": 7,
+          "rackCount": 8,
           "resigned": false,
           "score": 0
         }
@@ -645,7 +644,7 @@
       "turn": 1,
       "unseen": [
         {
-          "count": 6,
+          "count": 7,
           "tile": "A"
         },
         {
@@ -661,7 +660,7 @@
           "tile": "D"
         },
         {
-          "count": 12,
+          "count": 13,
           "tile": "E"
         },
         {
@@ -669,7 +668,7 @@
           "tile": "F"
         },
         {
-          "count": 3,
+          "count": 2,
           "tile": "G"
         },
         {
@@ -685,15 +684,15 @@
           "tile": "J"
         },
         {
-          "count": 2,
+          "count": 3,
           "tile": "K"
         },
         {
-          "count": 5,
+          "count": 4,
           "tile": "L"
         },
         {
-          "count": 3,
+          "count": 2,
           "tile": "M"
         },
         {
@@ -701,7 +700,7 @@
           "tile": "N"
         },
         {
-          "count": 5,
+          "count": 6,
           "tile": "O"
         },
         {
@@ -713,11 +712,11 @@
           "tile": "Q"
         },
         {
-          "count": 5,
+          "count": 6,
           "tile": "R"
         },
         {
-          "count": 6,
+          "count": 5,
           "tile": "S"
         },
         {
@@ -734,11 +733,11 @@
         },
         {
           "count": 1,
-          "tile": "Y"
+          "tile": "X"
         },
         {
           "count": 1,
-          "tile": "Z"
+          "tile": "Y"
         },
         {
           "count": 2,
@@ -752,12 +751,12 @@
     "bounties": [],
     "kind": "play",
     "score": {
-      "base": 66,
+      "base": 76,
       "bingo": 40,
       "bounty": 0,
       "comeback": 0,
       "handicap": 0,
-      "total": 66
+      "total": 76
     },
     "seat": 0,
     "tiles": [
@@ -767,7 +766,7 @@
           "row": 1
         },
         "tile": {
-          "letter": "K"
+          "letter": "W"
         }
       },
       {
@@ -785,7 +784,7 @@
           "row": 3
         },
         "tile": {
-          "letter": "P"
+          "letter": "R"
         }
       },
       {
@@ -794,7 +793,7 @@
           "row": 4
         },
         "tile": {
-          "letter": "E"
+          "letter": "K"
         }
       },
       {
@@ -803,7 +802,7 @@
           "row": 5
         },
         "tile": {
-          "letter": "R"
+          "letter": "L"
         }
       },
       {
@@ -821,19 +820,19 @@
           "row": 7
         },
         "tile": {
-          "letter": "N"
+          "letter": "S"
         }
       }
     ],
     "words": [
       {
         "dir": "down",
-        "score": 26,
+        "score": 36,
         "start": {
           "col": 7,
           "row": 1
         },
-        "word": "KEPEREN"
+        "word": "WERKLES"
       }
     ]
   }

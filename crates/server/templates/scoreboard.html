@@ -2,41 +2,42 @@
 {% block title %}Scoreboard · WordWarZ{% endblock %}
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
-<h1>Scoreboard</h1>
-<section class="card">
+<header class="page-header"><h1>Scoreboard</h1></header>
+<section class="panel">
   <h2>Standings</h2>
-  <table class="list">
-    <thead><tr><th>Player</th><th class="num">Games</th><th class="num">Wins</th><th class="num">Win %</th><th class="num">Avg score</th><th>Best move</th><th class="num">Bingos</th></tr></thead>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Standings">
+  <table class="data">
+    <thead><tr><th scope="col">Player</th><th scope="col" class="num">Games</th><th scope="col" class="num">Wins</th><th scope="col" class="num">Win %</th><th scope="col" class="num">Avg score</th><th scope="col">Best move</th><th scope="col" class="num">Bingos</th></tr></thead>
     <tbody>
     {% for p in players %}
-      <tr><td>{{ p.name }}</td><td class="num">{{ p.games }}</td><td class="num">{{ p.wins }}</td><td class="num">{{ p.win_rate }}</td><td class="num">{{ p.avg_score }}</td><td>{{ p.best }}</td><td class="num">{{ p.bingos }}</td></tr>
+      <tr><th scope="row">{{ p.name }}</th><td class="num">{{ p.games }}</td><td class="num">{{ p.wins }}</td><td class="num">{{ p.win_rate }}</td><td class="num">{{ p.avg_score }}</td><td>{{ p.best }}</td><td class="num">{{ p.bingos }}</td></tr>
     {% endfor %}
     </tbody>
   </table>
+  </div>
 </section>
-<div class="cols">
-<section class="card">
+<div class="panels">
+<section class="panel">
   <h2>Head to head</h2>
-  {% if rivals.is_empty() %}<p class="muted">Finish a game to start the rivalries.</p>{% else %}
-  <table class="list">
-    <tbody>
+  {% if rivals.is_empty() %}<p class="empty">Finish a game to start the rivalries.</p>{% else %}
+  <ul class="rows rivals">
     {% for r in rivals %}
-      <tr><td>{{ r.a }}</td><td class="num">{{ r.a_wins }} : {{ r.b_wins }}</td><td>{{ r.b }}</td><td class="muted">{% if r.draws > 0 %}{{ r.draws }} drawn{% endif %}</td></tr>
+    <li><span>{{ r.a }}</span><span class="score">{{ r.a_wins }} : {{ r.b_wins }}</span><span class="right">{{ r.b }}{% if r.draws > 0 %} <span class="meta">({{ r.draws }} drawn)</span>{% endif %}</span></li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
-<section class="card">
+<section class="panel">
   <h2>Recent matches</h2>
-  {% if recent.is_empty() %}<p class="muted">None yet.</p>{% else %}
-  <table class="list">
-    <tbody>
+  {% if recent.is_empty() %}<p class="empty">None yet.</p>{% else %}
+  <ul class="rows">
     {% for m in recent %}
-      <tr><td>{{ m.day }}</td><td><a href="/games/{{ m.id }}">{{ m.seats }}</a></td><td class="muted">{{ m.language }}</td></tr>
+    <li><a class="game-entry" href="/games/{{ m.id }}">
+      <span class="row-title">{{ m.seats }}</span>
+      <span class="meta"><time>{{ m.day }}</time> · {{ m.language }}</span>
+    </a></li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
 </div>

@@ -127,7 +127,7 @@ async fn error_page(resp: Response) -> Response {
     let page = format!(
         "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" \
          content=\"width=device-width, initial-scale=1\"><title>WordWarZ</title><link rel=\"stylesheet\" \
-         href=\"/static/app.css\"></head><body><main class=\"narrow\"><section class=\"card\">{fragment}\
+         href=\"/static/app.css\"></head><body><main class=\"page auth\"><section class=\"panel\">{fragment}\
          <p>Use your browser's back button, or <a href=\"/\">start over</a>.</p></section></main></body></html>"
     );
     (status, axum::response::Html(page)).into_response()
@@ -142,11 +142,6 @@ pub struct Nav {
 impl Nav {
     pub fn new(u: &WebUser, active: &'static str) -> Self {
         Nav { label: u.label().to_string(), active }
-    }
-
-    /// `class="active"` for the current section's link.
-    pub fn on(&self, section: &str) -> &'static str {
-        if self.active == section { "active" } else { "" }
     }
 }
 

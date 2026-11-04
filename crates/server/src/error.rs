@@ -80,7 +80,7 @@ impl<E: Into<ApiError>> From<E> for WebError {
 impl IntoResponse for WebError {
     fn into_response(self) -> Response {
         let (status, msg) = self.0.parts();
-        let body = format!("<p class=\"error\" role=\"alert\">{}</p>", escape(&msg));
+        let body = format!("<p class=\"notice error\" role=\"alert\">{}</p>", escape(&msg));
         let mut r = (status, axum::response::Html(body)).into_response();
         let h = r.headers_mut();
         h.insert("hx-retarget", HeaderValue::from_static("#flash"));

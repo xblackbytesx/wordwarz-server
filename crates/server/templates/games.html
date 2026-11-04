@@ -2,32 +2,36 @@
 {% block title %}Games · WordWarZ{% endblock %}
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
-<h1>Games</h1>
-<p class="muted">Play in the app; here you can follow along and replay finished games.</p>
-<section class="card">
+<header class="page-header">
+  <h1>Games</h1>
+  <p class="meta">Play in the app; here you can follow along and replay finished games.</p>
+</header>
+<div class="panels">
+<section class="panel">
   <h2>Running</h2>
-  {% if active.is_empty() %}<p class="muted">No running games. Start one in the app.</p>{% else %}
-  <table class="list">
-    <thead><tr><th>Players</th><th>Words</th><th>State</th><th>Last move</th></tr></thead>
-    <tbody>
+  {% if active.is_empty() %}<p class="empty">No running games. Start one in the app.</p>{% else %}
+  <ul class="rows">
     {% for g in active %}
-      <tr><td><a href="/games/{{ g.id }}">{{ g.players }}</a></td><td>{{ g.language }}</td><td>{% if g.mine %}<span class="badge ok">{{ g.state }}</span>{% else %}{{ g.state }}{% endif %}</td><td>{{ g.updated }}</td></tr>
+    <li><a class="game-entry" href="/games/{{ g.id }}">
+      <span class="row-title">{{ g.players }}</span>
+      <span class="meta">{{ g.language }} · {% if g.mine %}<span class="badge ok">{{ g.state }}</span>{% else %}{{ g.state }}{% endif %} · <time>{{ g.updated }}</time></span>
+    </a></li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
-<section class="card">
+<section class="panel">
   <h2>Finished</h2>
-  {% if finished.is_empty() %}<p class="muted">None yet.</p>{% else %}
-  <table class="list">
-    <thead><tr><th>Players</th><th>Words</th><th>Result</th><th>Ended</th></tr></thead>
-    <tbody>
+  {% if finished.is_empty() %}<p class="empty">None yet.</p>{% else %}
+  <ul class="rows">
     {% for g in finished %}
-      <tr><td><a href="/games/{{ g.id }}">{{ g.players }}</a></td><td>{{ g.language }}</td><td>{{ g.state }}</td><td>{{ g.updated }}</td></tr>
+    <li><a class="game-entry" href="/games/{{ g.id }}">
+      <span class="row-title">{{ g.players }}</span>
+      <span class="meta">{{ g.language }} · {{ g.state }} · <time>{{ g.updated }}</time></span>
+    </a></li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
+</div>
 {% endblock %}

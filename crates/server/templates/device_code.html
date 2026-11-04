@@ -1,7 +1,9 @@
-<div class="reveal">
-  {% if signed_out > 0 %}<p class="ok">{{ name }} was signed out on {{ signed_out }} device{% if signed_out != 1 %}s{% endif %}.</p>{% endif %}
-  <p>Scan this with WordWarZ on {{ name }}'s new phone: <strong>Play online, Scan a code</strong>. It works once, until {{ expires }}.</p>
-  <div class="qr">{{ qr|safe }}</div>
-  <p class="hint">Not in the room? Send them this link instead; it stops working at the same time.</p>
-  <div class="copyline"><code id="device-link-{{ id }}">{{ url }}</code><button type="button" class="small" data-copy="#device-link-{{ id }}">Copy</button></div>
+<div class="sheet-header">
+  <h2>New phone for {{ name }}</h2>
+  <button type="button" class="quiet compact" popovertarget="phone-{{ id }}" popovertargetaction="hide">Close</button>
 </div>
+{% if signed_out > 0 %}<p class="notice ok">{{ name }} was signed out on {{ signed_out }} device{% if signed_out != 1 %}s{% endif %}.</p>{% endif %}
+<p>Scan this with WordWarZ on {{ name }}'s new phone: <strong>Play online, Scan a code</strong>. It works once, until {{ expires }}.</p>
+<div class="qr">{{ qr|safe }}</div>
+<p class="hint">Not in the room? Send them this link instead; it stops working at the same time.</p>
+<div class="copy-line"><code id="device-link-{{ id }}">{{ url }}</code><button type="button" class="compact" data-copy="#device-link-{{ id }}">Copy</button></div>

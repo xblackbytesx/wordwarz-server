@@ -1,60 +1,60 @@
 {
   "headToHead": [
     {
-      "a": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-      "aWins": 1,
-      "b": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-      "bWins": 0,
+      "a": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+      "aWins": 0,
+      "b": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+      "bWins": 1,
       "draws": 0
     }
   ],
   "players": [
     {
-      "avgScore": 698,
-      "bestMove": 123,
-      "bestWord": "SNOERDE",
-      "bingos": 4,
-      "displayName": "Mila",
+      "avgScore": 765,
+      "bestMove": 193,
+      "bestWord": "KARAOKEN",
+      "bingos": 3,
+      "displayName": "Sheldon",
       "games": 1,
-      "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-      "username": "mila",
+      "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+      "username": "sheldon",
       "winRate": 100,
       "wins": 1
     },
     {
-      "avgScore": 650,
-      "bestMove": 90,
-      "bestWord": "PLENS",
-      "bingos": 0,
-      "displayName": "",
+      "avgScore": 699,
+      "bestMove": 186,
+      "bestWord": "BROEDEI",
+      "bingos": 3,
+      "displayName": "Mary",
       "games": 1,
-      "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-      "username": "mum",
+      "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+      "username": "mary",
       "winRate": 0,
       "wins": 0
     }
   ],
   "recent": [
     {
-      "finishedAt": "2026-11-02T23:21:19.167958Z",
-      "gameId": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+      "finishedAt": "2026-11-04T00:02:47.778993Z",
+      "gameId": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
       "language": "nl",
       "seats": [
         {
-          "displayName": "Mila",
-          "score": 698,
+          "displayName": "Mary",
+          "score": 699,
           "team": null,
-          "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-          "username": "mila",
-          "won": true
+          "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+          "username": "mary",
+          "won": false
         },
         {
-          "displayName": "",
-          "score": 650,
+          "displayName": "Sheldon",
+          "score": 765,
           "team": null,
-          "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-          "username": "mum",
-          "won": false
+          "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+          "username": "sheldon",
+          "won": true
         }
       ]
     }

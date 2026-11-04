@@ -1,6 +1,6 @@
-<div class="reveal">
+<div class="callout">
   <p>Scan this with the WordWarZ app, or send the link. It works once{% if admin %}, for an admin account{% endif %}, until {{ expires }}.</p>
   <div class="qr">{{ qr|safe }}</div>
-  <div class="copyline"><code id="invite-link">{{ link }}</code><button type="button" class="small" data-copy="#invite-link">Copy</button></div>
-  <p class="hint"><a href="/people">Done</a></p>
+  <div class="copy-line"><code id="invite-link">{{ link }}</code><button type="button" class="compact" data-copy="#invite-link">Copy</button></div>
+  <a href="/people">Done</a>
 </div>

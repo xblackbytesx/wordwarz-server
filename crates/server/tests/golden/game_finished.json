@@ -1,22 +1,22 @@
 {
-  "createdAt": "2026-11-02T23:21:18.459220Z",
-  "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+  "createdAt": "2026-11-04T00:02:47.208343Z",
+  "id": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
   "players": [
     {
-      "displayName": "Mila",
+      "displayName": "Mary",
       "seat": 0,
-      "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-      "username": "mila"
+      "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+      "username": "mary"
     },
     {
-      "displayName": "",
+      "displayName": "Sheldon",
       "seat": 1,
-      "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-      "username": "mum"
+      "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+      "username": "sheldon"
     }
   ],
-  "rev": 23,
-  "turnStartedAt": "2026-11-02T23:21:19.167958Z",
+  "rev": 21,
+  "turnStartedAt": "2026-11-04T00:02:47.778993Z",
   "turnTimerHours": 72,
   "view": {
     "bagCount": 0,
@@ -26,195 +26,29 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         {
           "letter": "W"
         },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "R"
-        },
-        {
-          "letter": "U"
-        },
-        {
-          "letter": "Z"
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "S"
-        },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "O"
-        },
-        null,
-        null,
-        {
-          "letter": "K"
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "N"
-        },
-        null,
-        null,
-        {
-          "letter": "D"
-        },
-        {
-          "letter": "R"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "N"
-        },
-        {
-          "letter": "T"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "L"
-        },
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "N"
-        },
-        {
-          "letter": "O"
-        },
-        null,
-        {
-          "letter": "O"
-        },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "K"
-        },
-        null,
-        null,
-        {
-          "letter": "P"
-        },
-        null,
-        {
-          "letter": "R"
-        },
-        null,
-        {
-          "letter": "D"
-        },
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        {
-          "letter": "G"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "K"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "F"
-        },
-        {
-          "letter": "T"
-        },
-        null,
-        null,
-        {
-          "letter": "R"
-        },
-        null,
-        null,
-        null,
         {
           "letter": "A"
-        },
-        {
-          "letter": "R"
-        },
-        {
-          "letter": "M"
-        },
-        null,
-        {
-          "letter": "R"
-        },
-        null,
-        {
-          "letter": "M"
-        },
-        {
-          "letter": "I"
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "D"
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "Q"
-        },
-        null,
-        {
-          "letter": "M"
-        },
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        {
-          "letter": "E"
         },
         {
           "letter": "X"
@@ -222,45 +56,16 @@
         null,
         null,
         null,
-        {
-          "letter": "E"
-        },
+        null,
+        null,
         null,
         null,
         {
           "letter": "P"
         },
         {
-          "letter": "U"
+          "letter": "G"
         },
-        null,
-        null,
-        null,
-        {
-          "letter": "N"
-        },
-        null,
-        {
-          "letter": "N"
-        },
-        {
-          "letter": "E"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "A"
-        },
-        {
-          "letter": "A"
-        },
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -272,33 +77,59 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
         {
-          "letter": "C"
+          "letter": "G"
         },
         {
-          "letter": "L"
+          "letter": "E"
         },
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
         {
           "letter": "R"
         },
+        null,
+        null,
+        null,
         {
-          "letter": "I"
+          "letter": "Z"
         },
         null,
         null,
         null,
+        null,
+        null,
+        null,
         {
-          "letter": "P"
+          "letter": "F"
         },
         {
-          "letter": "L"
+          "letter": "A"
+        },
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "K"
         },
         {
           "letter": "E"
@@ -307,8 +138,231 @@
           "letter": "N"
         },
         {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "M"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        {
           "letter": "S"
         },
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        {
+          "letter": "M"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "P"
+        },
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        {
+          "letter": "J"
+        },
+        null,
+        null,
+        {
+          "letter": "P"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "D"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        {
+          "letter": "U"
+        },
+        {
+          "letter": "T"
+        },
+        null,
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "B"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "O"
+        },
+        null,
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "U"
+        },
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "U"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "N"
+        },
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        {
+          "letter": "Y"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "S"
+        },
+        null,
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "blank": true,
+          "letter": "D"
+        },
+        null,
         null,
         null,
         null,
@@ -318,112 +372,36 @@
           "letter": "D"
         },
         {
-          "letter": "J"
+          "letter": "M"
         },
         null,
         null,
         null,
         null,
-        {
-          "letter": "A"
-        },
-        {
-          "letter": "T"
-        },
+        null,
         null,
         {
-          "letter": "H"
-        },
-        {
-          "letter": "U"
+          "letter": "E"
         },
         {
           "letter": "B"
         },
         {
-          "letter": "S"
+          "letter": "D"
         },
-        null,
-        null,
         {
-          "blank": true,
           "letter": "E"
         },
-        {
-          "letter": "L"
-        },
-        {
-          "letter": "S"
-        },
-        null,
-        null,
         null,
         {
-          "letter": "V"
+          "letter": "D"
         },
         {
           "letter": "O"
         },
-        null,
-        {
-          "letter": "O"
-        },
-        null,
-        null,
-        {
-          "letter": "A"
-        },
-        {
-          "letter": "Y"
-        },
-        {
-          "letter": "A"
-        },
-        null,
-        {
-          "letter": "T"
-        },
         {
           "letter": "L"
         },
-        null,
-        null,
-        null,
-        {
-          "blank": true,
-          "letter": "E"
-        },
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "G"
-        },
-        null,
-        null,
-        {
-          "letter": "G"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "K"
-        },
-        {
-          "letter": "S"
-        },
-        null,
-        {
-          "letter": "I"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         {
           "letter": "I"
         },
@@ -431,30 +409,53 @@
           "letter": "N"
         },
         {
-          "letter": "V"
+          "letter": "G"
         },
+        null,
+        null,
+        null,
         {
-          "letter": "A"
-        },
-        {
-          "letter": "S"
+          "letter": "C"
         },
         {
           "letter": "I"
         },
         {
+          "letter": "V"
+        },
+        {
           "letter": "E"
         },
-        null,
         {
-          "letter": "B"
+          "letter": "T"
         },
+        {
+          "blank": true,
+          "letter": "T"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "N"
+        },
+        null,
+        null,
         null,
         null
       ],
       "size": 15
     },
-    "claimedBounties": [],
+    "claimedBounties": [
+      {
+        "claimedBy": 0,
+        "points": 20,
+        "pos": {
+          "col": 2,
+          "row": 3
+        }
+      }
+    ],
     "config": {
       "bingoBonus": 40,
       "board": {
@@ -470,11 +471,11 @@
       "language": "nl",
       "players": [
         {
-          "rackSize": 8,
+          "rackSize": 7,
           "scorePercent": 100
         },
         {
-          "rackSize": 7,
+          "rackSize": 8,
           "scorePercent": 100
         }
       ],
@@ -487,12 +488,12 @@
         "bounties": [],
         "kind": "play",
         "score": {
-          "base": 66,
+          "base": 76,
           "bingo": 40,
           "bounty": 0,
           "comeback": 0,
           "handicap": 0,
-          "total": 66
+          "total": 76
         },
         "seat": 0,
         "tiles": [
@@ -500,175 +501,6 @@
             "pos": {
               "col": 7,
               "row": 1
-            },
-            "tile": {
-              "letter": "K"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 2
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 3
-            },
-            "tile": {
-              "letter": "P"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 4
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 5
-            },
-            "tile": {
-              "letter": "R"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 6
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 7
-            },
-            "tile": {
-              "letter": "N"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 26,
-            "start": {
-              "col": 7,
-              "row": 1
-            },
-            "word": "KEPEREN"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 38,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 10,
-          "handicap": 0,
-          "total": 48
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 2,
-              "row": 2
-            },
-            "tile": {
-              "letter": "D"
-            }
-          },
-          {
-            "pos": {
-              "col": 3,
-              "row": 2
-            },
-            "tile": {
-              "letter": "R"
-            }
-          },
-          {
-            "pos": {
-              "col": 4,
-              "row": 2
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 5,
-              "row": 2
-            },
-            "tile": {
-              "letter": "N"
-            }
-          },
-          {
-            "pos": {
-              "col": 6,
-              "row": 2
-            },
-            "tile": {
-              "letter": "T"
-            }
-          },
-          {
-            "pos": {
-              "col": 8,
-              "row": 2
-            },
-            "tile": {
-              "letter": "L"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "across",
-            "score": 38,
-            "start": {
-              "col": 2,
-              "row": 2
-            },
-            "word": "DRENTEL"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 84,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 84
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 4,
-              "row": 0
             },
             "tile": {
               "letter": "W"
@@ -676,17 +508,26 @@
           },
           {
             "pos": {
-              "col": 4,
-              "row": 1
+              "col": 7,
+              "row": 2
             },
             "tile": {
-              "letter": "O"
+              "letter": "E"
             }
           },
           {
             "pos": {
-              "col": 4,
+              "col": 7,
               "row": 3
+            },
+            "tile": {
+              "letter": "R"
+            }
+          },
+          {
+            "pos": {
+              "col": 7,
+              "row": 4
             },
             "tile": {
               "letter": "K"
@@ -694,257 +535,26 @@
           },
           {
             "pos": {
-              "col": 4,
-              "row": 4
+              "col": 7,
+              "row": 5
             },
             "tile": {
-              "letter": "E"
+              "letter": "L"
             }
           },
           {
             "pos": {
-              "col": 4,
-              "row": 5
-            },
-            "tile": {
-              "letter": "R"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 84,
-            "start": {
-              "col": 4,
-              "row": 0
-            },
-            "word": "WOEKER"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 40,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 10,
-          "handicap": 0,
-          "total": 50
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 3,
-              "row": 5
-            },
-            "tile": {
-              "letter": "A"
-            }
-          },
-          {
-            "pos": {
-              "col": 3,
+              "col": 7,
               "row": 6
             },
             "tile": {
-              "letter": "Q"
-            }
-          },
-          {
-            "pos": {
-              "col": 3,
-              "row": 7
-            },
-            "tile": {
-              "letter": "U"
-            }
-          },
-          {
-            "pos": {
-              "col": 3,
-              "row": 8
-            },
-            "tile": {
-              "letter": "A"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 36,
-            "start": {
-              "col": 3,
-              "row": 5
-            },
-            "word": "AQUA"
-          },
-          {
-            "dir": "across",
-            "score": 4,
-            "start": {
-              "col": 3,
-              "row": 5
-            },
-            "word": "AR"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 87,
-          "bingo": 40,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 87
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 2,
-              "row": 7
-            },
-            "tile": {
-              "letter": "P"
-            }
-          },
-          {
-            "pos": {
-              "col": 2,
-              "row": 8
-            },
-            "tile": {
-              "letter": "A"
-            }
-          },
-          {
-            "pos": {
-              "col": 2,
-              "row": 9
-            },
-            "tile": {
-              "letter": "L"
-            }
-          },
-          {
-            "pos": {
-              "col": 2,
-              "row": 10
-            },
-            "tile": {
               "letter": "E"
             }
           },
           {
             "pos": {
-              "col": 2,
-              "row": 11
-            },
-            "tile": {
-              "letter": "T"
-            }
-          },
-          {
-            "pos": {
-              "col": 2,
-              "row": 12
-            },
-            "tile": {
-              "letter": "O"
-            }
-          },
-          {
-            "pos": {
-              "col": 2,
-              "row": 13
-            },
-            "tile": {
-              "letter": "T"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 34,
-            "start": {
-              "col": 2,
+              "col": 7,
               "row": 7
-            },
-            "word": "PALETOT"
-          },
-          {
-            "dir": "across",
-            "score": 7,
-            "start": {
-              "col": 2,
-              "row": 7
-            },
-            "word": "PU"
-          },
-          {
-            "dir": "across",
-            "score": 6,
-            "start": {
-              "col": 2,
-              "row": 8
-            },
-            "word": "AA"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 72,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 18,
-          "handicap": 0,
-          "total": 90
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 0,
-              "row": 10
-            },
-            "tile": {
-              "letter": "P"
-            }
-          },
-          {
-            "pos": {
-              "col": 1,
-              "row": 10
-            },
-            "tile": {
-              "letter": "L"
-            }
-          },
-          {
-            "pos": {
-              "col": 3,
-              "row": 10
-            },
-            "tile": {
-              "letter": "N"
-            }
-          },
-          {
-            "pos": {
-              "col": 4,
-              "row": 10
             },
             "tile": {
               "letter": "S"
@@ -953,13 +563,13 @@
         ],
         "words": [
           {
-            "dir": "across",
-            "score": 72,
+            "dir": "down",
+            "score": 36,
             "start": {
-              "col": 0,
-              "row": 10
+              "col": 7,
+              "row": 1
             },
-            "word": "PLENS"
+            "word": "WERKLES"
           }
         ]
       },
@@ -967,28 +577,46 @@
         "bounties": [],
         "kind": "play",
         "score": {
-          "base": 42,
-          "bingo": 0,
+          "base": 154,
+          "bingo": 40,
           "bounty": 0,
-          "comeback": 0,
+          "comeback": 39,
           "handicap": 0,
-          "total": 42
+          "total": 193
         },
-        "seat": 0,
+        "seat": 1,
         "tiles": [
           {
             "pos": {
-              "col": 4,
-              "row": 11
+              "col": 8,
+              "row": 4
             },
             "tile": {
-              "letter": "H"
+              "letter": "A"
             }
           },
           {
             "pos": {
-              "col": 4,
-              "row": 12
+              "col": 9,
+              "row": 4
+            },
+            "tile": {
+              "letter": "R"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 4
+            },
+            "tile": {
+              "letter": "A"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 4
             },
             "tile": {
               "letter": "O"
@@ -996,32 +624,41 @@
           },
           {
             "pos": {
-              "col": 4,
-              "row": 13
+              "col": 12,
+              "row": 4
             },
             "tile": {
-              "letter": "G"
+              "letter": "K"
             }
           },
           {
             "pos": {
-              "col": 4,
-              "row": 14
+              "col": 13,
+              "row": 4
             },
             "tile": {
-              "letter": "I"
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 14,
+              "row": 4
+            },
+            "tile": {
+              "letter": "N"
             }
           }
         ],
         "words": [
           {
-            "dir": "down",
-            "score": 42,
+            "dir": "across",
+            "score": 114,
             "start": {
-              "col": 4,
-              "row": 10
+              "col": 7,
+              "row": 4
             },
-            "word": "SHOGI"
+            "word": "KARAOKEN"
           }
         ]
       },
@@ -1036,30 +673,128 @@
           "handicap": 0,
           "total": 68
         },
-        "seat": 1,
+        "seat": 0,
         "tiles": [
           {
             "pos": {
-              "col": 5,
-              "row": 14
+              "col": 11,
+              "row": 3
+            },
+            "tile": {
+              "letter": "Z"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 5
+            },
+            "tile": {
+              "letter": "M"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 6
+            },
+            "tile": {
+              "letter": "P"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 7
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 8
             },
             "tile": {
               "letter": "N"
             }
-          },
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 54,
+            "start": {
+              "col": 11,
+              "row": 3
+            },
+            "word": "ZOMPEN"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 68,
+          "bingo": 40,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 68
+        },
+        "seat": 1,
+        "tiles": [
           {
             "pos": {
-              "col": 6,
-              "row": 14
+              "col": 0,
+              "row": 5
             },
             "tile": {
-              "letter": "V"
+              "letter": "K"
             }
           },
           {
             "pos": {
-              "col": 7,
-              "row": 14
+              "col": 1,
+              "row": 5
+            },
+            "tile": {
+              "letter": "I"
+            }
+          },
+          {
+            "pos": {
+              "col": 2,
+              "row": 5
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 5
+            },
+            "tile": {
+              "letter": "L"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 5
+            },
+            "tile": {
+              "letter": "H"
+            }
+          },
+          {
+            "pos": {
+              "col": 5,
+              "row": 5
             },
             "tile": {
               "letter": "A"
@@ -1067,17 +802,329 @@
           },
           {
             "pos": {
-              "col": 8,
-              "row": 14
+              "col": 6,
+              "row": 5
             },
             "tile": {
-              "letter": "S"
+              "letter": "A"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "across",
+            "score": 28,
+            "start": {
+              "col": 0,
+              "row": 5
+            },
+            "word": "KIELHAAL"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 84,
+          "bingo": 40,
+          "bounty": 0,
+          "comeback": 21,
+          "handicap": 0,
+          "total": 105
+        },
+        "seat": 0,
+        "tiles": [
+          {
+            "pos": {
+              "col": 3,
+              "row": 2
+            },
+            "tile": {
+              "letter": "G"
             }
           },
           {
             "pos": {
-              "col": 9,
+              "col": 3,
+              "row": 3
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 4
+            },
+            "tile": {
+              "letter": "F"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 6
+            },
+            "tile": {
+              "letter": "I"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 7
+            },
+            "tile": {
+              "letter": "P"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 8
+            },
+            "tile": {
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 3,
+              "row": 9
+            },
+            "tile": {
+              "letter": "E"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 44,
+            "start": {
+              "col": 3,
+              "row": 2
+            },
+            "word": "GEFLIPTE"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 69,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 69
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 0,
+              "row": 6
+            },
+            "tile": {
+              "letter": "A"
+            }
+          },
+          {
+            "pos": {
+              "col": 0,
+              "row": 7
+            },
+            "tile": {
+              "letter": "J"
+            }
+          },
+          {
+            "pos": {
+              "col": 0,
+              "row": 8
+            },
+            "tile": {
+              "letter": "U"
+            }
+          },
+          {
+            "pos": {
+              "col": 0,
+              "row": 9
+            },
+            "tile": {
+              "letter": "I"
+            }
+          },
+          {
+            "pos": {
+              "col": 0,
+              "row": 10
+            },
+            "tile": {
+              "letter": "T"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 69,
+            "start": {
+              "col": 0,
+              "row": 5
+            },
+            "word": "KAJUIT"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 149,
+          "bingo": 40,
+          "bounty": 0,
+          "comeback": 37,
+          "handicap": 0,
+          "total": 186
+        },
+        "seat": 0,
+        "tiles": [
+          {
+            "pos": {
+              "col": 4,
+              "row": 8
+            },
+            "tile": {
+              "letter": "B"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 9
+            },
+            "tile": {
+              "letter": "R"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 10
+            },
+            "tile": {
+              "letter": "O"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 11
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 12
+            },
+            "tile": {
+              "blank": true,
+              "letter": "D"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 13
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
               "row": 14
+            },
+            "tile": {
+              "letter": "I"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 96,
+            "start": {
+              "col": 4,
+              "row": 8
+            },
+            "word": "BROEDEI"
+          },
+          {
+            "dir": "across",
+            "score": 10,
+            "start": {
+              "col": 3,
+              "row": 8
+            },
+            "word": "TB"
+          },
+          {
+            "dir": "across",
+            "score": 3,
+            "start": {
+              "col": 3,
+              "row": 9
+            },
+            "word": "ER"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 55,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 14,
+          "handicap": 0,
+          "total": 69
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 10,
+              "row": 6
+            },
+            "tile": {
+              "letter": "O"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 7
+            },
+            "tile": {
+              "letter": "D"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 8
             },
             "tile": {
               "letter": "I"
@@ -1086,60 +1133,7 @@
           {
             "pos": {
               "col": 10,
-              "row": 14
-            },
-            "tile": {
-              "letter": "E"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "across",
-            "score": 54,
-            "start": {
-              "col": 4,
-              "row": 14
-            },
-            "word": "INVASIE"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 38,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 38
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 6,
-              "row": 4
-            },
-            "tile": {
-              "letter": "G"
-            }
-          },
-          {
-            "pos": {
-              "col": 8,
-              "row": 4
-            },
-            "tile": {
-              "letter": "K"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 4
+              "row": 9
             },
             "tile": {
               "letter": "E"
@@ -1148,22 +1142,352 @@
           {
             "pos": {
               "col": 10,
-              "row": 4
+              "row": 10
             },
             "tile": {
-              "letter": "F"
+              "letter": "U"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 11
+            },
+            "tile": {
+              "letter": "S"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 38,
+            "start": {
+              "col": 10,
+              "row": 6
+            },
+            "word": "ODIEUS"
+          },
+          {
+            "dir": "across",
+            "score": 7,
+            "start": {
+              "col": 10,
+              "row": 6
+            },
+            "word": "OP"
+          },
+          {
+            "dir": "across",
+            "score": 4,
+            "start": {
+              "col": 10,
+              "row": 7
+            },
+            "word": "DE"
+          },
+          {
+            "dir": "across",
+            "score": 6,
+            "start": {
+              "col": 10,
+              "row": 8
+            },
+            "word": "IN"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 57,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 57
+        },
+        "seat": 0,
+        "tiles": [
+          {
+            "pos": {
+              "col": 8,
+              "row": 10
+            },
+            "tile": {
+              "letter": "S"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 10
+            },
+            "tile": {
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 10
+            },
+            "tile": {
+              "letter": "N"
+            }
+          },
+          {
+            "pos": {
+              "col": 12,
+              "row": 10
+            },
+            "tile": {
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 13,
+              "row": 10
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 14,
+              "row": 10
+            },
+            "tile": {
+              "letter": "N"
             }
           }
         ],
         "words": [
           {
             "dir": "across",
-            "score": 38,
+            "score": 57,
             "start": {
+              "col": 8,
+              "row": 10
+            },
+            "word": "STUNTEN"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 97,
+          "bingo": 40,
+          "bounty": 0,
+          "comeback": 24,
+          "handicap": 0,
+          "total": 121
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 3,
+              "row": 14
+            },
+            "tile": {
+              "letter": "C"
+            }
+          },
+          {
+            "pos": {
+              "col": 5,
+              "row": 14
+            },
+            "tile": {
+              "letter": "V"
+            }
+          },
+          {
+            "pos": {
               "col": 6,
+              "row": 14
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 7,
+              "row": 14
+            },
+            "tile": {
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 8,
+              "row": 14
+            },
+            "tile": {
+              "blank": true,
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 14
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 14
+            },
+            "tile": {
+              "letter": "N"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "across",
+            "score": 57,
+            "start": {
+              "col": 3,
+              "row": 14
+            },
+            "word": "CIVETTEN"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 46,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 46
+        },
+        "seat": 0,
+        "tiles": [
+          {
+            "pos": {
+              "col": 4,
               "row": 4
             },
-            "word": "GEKEF"
+            "tile": {
+              "letter": "A"
+            }
+          },
+          {
+            "pos": {
+              "col": 4,
+              "row": 6
+            },
+            "tile": {
+              "letter": "S"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 24,
+            "start": {
+              "col": 4,
+              "row": 4
+            },
+            "word": "AHS"
+          },
+          {
+            "dir": "across",
+            "score": 14,
+            "start": {
+              "col": 3,
+              "row": 4
+            },
+            "word": "FA"
+          },
+          {
+            "dir": "across",
+            "score": 8,
+            "start": {
+              "col": 3,
+              "row": 6
+            },
+            "word": "IS"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 68,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 68
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 3,
+              "row": 11
+            },
+            "tile": {
+              "letter": "Y"
+            }
+          },
+          {
+            "pos": {
+              "col": 5,
+              "row": 11
+            },
+            "tile": {
+              "letter": "L"
+            }
+          },
+          {
+            "pos": {
+              "col": 6,
+              "row": 11
+            },
+            "tile": {
+              "letter": "L"
+            }
+          },
+          {
+            "pos": {
+              "col": 7,
+              "row": 11
+            },
+            "tile": {
+              "letter": "S"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "across",
+            "score": 68,
+            "start": {
+              "col": 3,
+              "row": 11
+            },
+            "word": "YELLS"
           }
         ]
       },
@@ -1178,90 +1502,72 @@
           "handicap": 0,
           "total": 50
         },
-        "seat": 1,
+        "seat": 0,
         "tiles": [
+          {
+            "pos": {
+              "col": 5,
+              "row": 13
+            },
+            "tile": {
+              "letter": "B"
+            }
+          },
+          {
+            "pos": {
+              "col": 6,
+              "row": 13
+            },
+            "tile": {
+              "letter": "D"
+            }
+          },
           {
             "pos": {
               "col": 7,
               "row": 13
             },
             "tile": {
-              "letter": "G"
-            }
-          },
-          {
-            "pos": {
-              "col": 8,
-              "row": 13
-            },
-            "tile": {
               "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 13
-            },
-            "tile": {
-              "letter": "K"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 13
-            },
-            "tile": {
-              "letter": "S"
             }
           }
         ],
         "words": [
           {
             "dir": "across",
+            "score": 17,
+            "start": {
+              "col": 4,
+              "row": 13
+            },
+            "word": "EBDE"
+          },
+          {
+            "dir": "down",
             "score": 16,
             "start": {
-              "col": 7,
+              "col": 5,
               "row": 13
             },
-            "word": "GEKS"
-          },
-          {
-            "dir": "down",
-            "score": 5,
-            "start": {
-              "col": 7,
-              "row": 13
-            },
-            "word": "GA"
+            "word": "BV"
           },
           {
             "dir": "down",
             "score": 4,
             "start": {
-              "col": 8,
+              "col": 6,
               "row": 13
             },
-            "word": "ES"
+            "word": "DE"
           },
           {
             "dir": "down",
-            "score": 11,
+            "score": 3,
             "start": {
-              "col": 9,
+              "col": 7,
               "row": 13
             },
-            "word": "KI"
-          },
-          {
-            "dir": "down",
-            "score": 4,
-            "start": {
-              "col": 10,
-              "row": 13
-            },
-            "word": "SE"
+            "word": "ET"
           }
         ]
       },
@@ -1269,79 +1575,195 @@
         "bounties": [],
         "kind": "play",
         "score": {
-          "base": 54,
+          "base": 55,
           "bingo": 0,
           "bounty": 0,
           "comeback": 0,
           "handicap": 0,
-          "total": 54
+          "total": 55
         },
-        "seat": 0,
+        "seat": 1,
         "tiles": [
           {
             "pos": {
-              "col": 7,
-              "row": 12
+              "col": 9,
+              "row": 6
             },
             "tile": {
-              "letter": "A"
-            }
-          },
-          {
-            "pos": {
-              "col": 8,
-              "row": 12
-            },
-            "tile": {
-              "letter": "Y"
+              "letter": "M"
             }
           },
           {
             "pos": {
               "col": 9,
-              "row": 12
+              "row": 7
             },
             "tile": {
-              "letter": "A"
+              "letter": "O"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 8
+            },
+            "tile": {
+              "letter": "T"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 9
+            },
+            "tile": {
+              "letter": "S"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 11
+            },
+            "tile": {
+              "letter": "E"
             }
           }
         ],
         "words": [
           {
-            "dir": "across",
-            "score": 20,
-            "start": {
-              "col": 7,
-              "row": 12
-            },
-            "word": "AYA"
-          },
-          {
-            "dir": "down",
-            "score": 7,
-            "start": {
-              "col": 7,
-              "row": 12
-            },
-            "word": "AGA"
-          },
-          {
             "dir": "down",
             "score": 20,
-            "start": {
-              "col": 8,
-              "row": 12
-            },
-            "word": "YES"
-          },
-          {
-            "dir": "down",
-            "score": 7,
             "start": {
               "col": 9,
-              "row": 12
+              "row": 6
             },
-            "word": "AKI"
+            "word": "MOTSTE"
+          },
+          {
+            "dir": "across",
+            "score": 9,
+            "start": {
+              "col": 9,
+              "row": 6
+            },
+            "word": "MOP"
+          },
+          {
+            "dir": "across",
+            "score": 6,
+            "start": {
+              "col": 9,
+              "row": 7
+            },
+            "word": "ODE"
+          },
+          {
+            "dir": "across",
+            "score": 6,
+            "start": {
+              "col": 9,
+              "row": 8
+            },
+            "word": "TIN"
+          },
+          {
+            "dir": "across",
+            "score": 10,
+            "start": {
+              "col": 9,
+              "row": 9
+            },
+            "word": "SE"
+          },
+          {
+            "dir": "across",
+            "score": 4,
+            "start": {
+              "col": 9,
+              "row": 11
+            },
+            "word": "ES"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 41,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 10,
+          "handicap": 0,
+          "total": 51
+        },
+        "seat": 0,
+        "tiles": [
+          {
+            "pos": {
+              "col": 12,
+              "row": 6
+            },
+            "tile": {
+              "letter": "E"
+            }
+          },
+          {
+            "pos": {
+              "col": 12,
+              "row": 7
+            },
+            "tile": {
+              "letter": "N"
+            }
+          },
+          {
+            "pos": {
+              "col": 12,
+              "row": 8
+            },
+            "tile": {
+              "letter": "K"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "down",
+            "score": 10,
+            "start": {
+              "col": 12,
+              "row": 6
+            },
+            "word": "ENK"
+          },
+          {
+            "dir": "across",
+            "score": 11,
+            "start": {
+              "col": 9,
+              "row": 6
+            },
+            "word": "MOPE"
+          },
+          {
+            "dir": "across",
+            "score": 8,
+            "start": {
+              "col": 9,
+              "row": 7
+            },
+            "word": "ODEN"
+          },
+          {
+            "dir": "across",
+            "score": 12,
+            "start": {
+              "col": 9,
+              "row": 8
+            },
+            "word": "TINK"
           }
         ]
       },
@@ -1352,795 +1774,122 @@
           "base": 34,
           "bingo": 0,
           "bounty": 0,
-          "comeback": 9,
+          "comeback": 0,
           "handicap": 0,
-          "total": 43
+          "total": 34
         },
         "seat": 1,
         "tiles": [
           {
             "pos": {
-              "col": 11,
-              "row": 0
-            },
-            "tile": {
-              "letter": "Z"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 1
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 2
-            },
-            "tile": {
-              "letter": "N"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 3
-            },
-            "tile": {
-              "letter": "D"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 4
+              "col": 1,
+              "row": 8
             },
             "tile": {
               "letter": "T"
             }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 19,
-            "start": {
-              "col": 11,
-              "row": 0
-            },
-            "word": "ZENDT"
-          },
-          {
-            "dir": "across",
-            "score": 15,
-            "start": {
-              "col": 6,
-              "row": 4
-            },
-            "word": "GEKEFT"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 102,
-          "bingo": 40,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 102
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 10,
-              "row": 5
-            },
-            "tile": {
-              "letter": "I"
-            }
           },
           {
             "pos": {
-              "col": 10,
-              "row": 6
-            },
-            "tile": {
-              "letter": "X"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 7
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 8
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
+              "col": 1,
               "row": 9
+            },
+            "tile": {
+              "letter": "O"
+            }
+          },
+          {
+            "pos": {
+              "col": 1,
+              "row": 10
+            },
+            "tile": {
+              "letter": "U"
+            }
+          },
+          {
+            "pos": {
+              "col": 1,
+              "row": 11
             },
             "tile": {
               "letter": "R"
             }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 10
-            },
-            "tile": {
-              "letter": "D"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 11
-            },
-            "tile": {
-              "blank": true,
-              "letter": "E"
-            }
           }
         ],
         "words": [
           {
             "dir": "down",
-            "score": 62,
-            "start": {
-              "col": 10,
-              "row": 4
-            },
-            "word": "FIXEERDE"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 54,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 14,
-          "handicap": 0,
-          "total": 68
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 1,
-              "row": 9
-            },
-            "tile": {
-              "letter": "C"
-            }
-          },
-          {
-            "pos": {
-              "col": 1,
-              "row": 11
-            },
-            "tile": {
-              "letter": "A"
-            }
-          },
-          {
-            "pos": {
-              "col": 1,
-              "row": 12
-            },
-            "tile": {
-              "letter": "V"
-            }
-          },
-          {
-            "pos": {
-              "col": 1,
-              "row": 13
-            },
-            "tile": {
-              "blank": true,
-              "letter": "E"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 24,
+            "score": 14,
             "start": {
               "col": 1,
-              "row": 9
+              "row": 8
             },
-            "word": "CLAVE"
-          },
-          {
-            "dir": "across",
-            "score": 18,
-            "start": {
-              "col": 1,
-              "row": 9
-            },
-            "word": "CL"
-          },
-          {
-            "dir": "across",
-            "score": 4,
-            "start": {
-              "col": 1,
-              "row": 11
-            },
-            "word": "AT"
+            "word": "TOUR"
           },
           {
             "dir": "across",
             "score": 6,
             "start": {
-              "col": 1,
-              "row": 12
+              "col": 0,
+              "row": 8
             },
-            "word": "VO"
-          },
-          {
-            "dir": "across",
-            "score": 2,
-            "start": {
-              "col": 1,
-              "row": 13
-            },
-            "word": "ET"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 39,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 39
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 11,
-              "row": 9
-            },
-            "tile": {
-              "letter": "I"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 10
-            },
-            "tile": {
-              "letter": "J"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 11
-            },
-            "tile": {
-              "letter": "L"
-            }
-          },
-          {
-            "pos": {
-              "col": 11,
-              "row": 12
-            },
-            "tile": {
-              "letter": "T"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 18,
-            "start": {
-              "col": 11,
-              "row": 9
-            },
-            "word": "IJLT"
-          },
-          {
-            "dir": "across",
-            "score": 4,
-            "start": {
-              "col": 10,
-              "row": 9
-            },
-            "word": "RI"
+            "word": "UT"
           },
           {
             "dir": "across",
             "score": 8,
             "start": {
-              "col": 10,
-              "row": 10
+              "col": 0,
+              "row": 9
             },
-            "word": "DJ"
-          },
-          {
-            "dir": "across",
-            "score": 9,
-            "start": {
-              "col": 10,
-              "row": 11
-            },
-            "word": "EL"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 40,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 10,
-          "handicap": 0,
-          "total": 50
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 12,
-              "row": 11
-            },
-            "tile": {
-              "letter": "S"
-            }
-          },
-          {
-            "pos": {
-              "col": 12,
-              "row": 12
-            },
-            "tile": {
-              "letter": "L"
-            }
-          },
-          {
-            "pos": {
-              "col": 12,
-              "row": 13
-            },
-            "tile": {
-              "letter": "I"
-            }
-          },
-          {
-            "pos": {
-              "col": 12,
-              "row": 14
-            },
-            "tile": {
-              "letter": "B"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 24,
-            "start": {
-              "col": 12,
-              "row": 11
-            },
-            "word": "SLIB"
+            "word": "IO"
           },
           {
             "dir": "across",
             "score": 6,
             "start": {
-              "col": 10,
-              "row": 11
+              "col": 0,
+              "row": 10
             },
-            "word": "ELS"
-          },
-          {
-            "dir": "across",
-            "score": 10,
-            "start": {
-              "col": 11,
-              "row": 12
-            },
-            "word": "TL"
+            "word": "TU"
           }
         ]
       },
       {
-        "bounties": [],
+        "bounties": [
+          {
+            "col": 2,
+            "row": 3
+          }
+        ],
         "kind": "play",
         "score": {
-          "base": 42,
+          "base": 28,
           "bingo": 0,
-          "bounty": 0,
+          "bounty": 20,
           "comeback": 0,
           "handicap": 0,
-          "total": 42
+          "total": 48
         },
         "seat": 0,
         "tiles": [
           {
             "pos": {
-              "col": 9,
-              "row": 0
-            },
-            "tile": {
-              "letter": "R"
-            }
-          },
-          {
-            "pos": {
-              "col": 10,
-              "row": 0
-            },
-            "tile": {
-              "letter": "U"
-            }
-          },
-          {
-            "pos": {
-              "col": 12,
-              "row": 0
-            },
-            "tile": {
-              "letter": "I"
-            }
-          },
-          {
-            "pos": {
-              "col": 13,
-              "row": 0
-            },
-            "tile": {
-              "letter": "E"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "across",
-            "score": 42,
-            "start": {
-              "col": 9,
-              "row": 0
-            },
-            "word": "RUZIE"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 50,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 13,
-          "handicap": 0,
-          "total": 63
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 5,
-              "row": 11
-            },
-            "tile": {
-              "letter": "U"
-            }
-          },
-          {
-            "pos": {
-              "col": 6,
-              "row": 11
-            },
-            "tile": {
-              "letter": "B"
-            }
-          },
-          {
-            "pos": {
-              "col": 7,
-              "row": 11
-            },
-            "tile": {
-              "letter": "S"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "across",
-            "score": 30,
-            "start": {
-              "col": 4,
-              "row": 11
-            },
-            "word": "HUBS"
-          },
-          {
-            "dir": "down",
-            "score": 20,
-            "start": {
-              "col": 7,
-              "row": 11
-            },
-            "word": "SAGA"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 123,
-          "bingo": 40,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 123
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 14,
-              "row": 0
-            },
-            "tile": {
-              "letter": "S"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 1
-            },
-            "tile": {
-              "letter": "N"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 2
-            },
-            "tile": {
-              "letter": "O"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 3
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 4
-            },
-            "tile": {
-              "letter": "R"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 5
-            },
-            "tile": {
-              "letter": "D"
-            }
-          },
-          {
-            "pos": {
-              "col": 14,
-              "row": 6
-            },
-            "tile": {
-              "letter": "E"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 60,
-            "start": {
-              "col": 14,
-              "row": 0
-            },
-            "word": "SNOERDE"
-          },
-          {
-            "dir": "across",
-            "score": 23,
-            "start": {
-              "col": 9,
-              "row": 0
-            },
-            "word": "RUZIES"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 62,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 16,
-          "handicap": 0,
-          "total": 78
-        },
-        "seat": 1,
-        "tiles": [
-          {
-            "pos": {
-              "col": 9,
-              "row": 2
-            },
-            "tile": {
-              "letter": "T"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 3
-            },
-            "tile": {
-              "letter": "R"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 5
-            },
-            "tile": {
-              "letter": "M"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 6
-            },
-            "tile": {
-              "letter": "E"
-            }
-          },
-          {
-            "pos": {
-              "col": 9,
-              "row": 7
-            },
-            "tile": {
-              "letter": "N"
-            }
-          }
-        ],
-        "words": [
-          {
-            "dir": "down",
-            "score": 20,
-            "start": {
-              "col": 9,
-              "row": 2
-            },
-            "word": "TREMEN"
-          },
-          {
-            "dir": "across",
-            "score": 16,
-            "start": {
               "col": 2,
               "row": 2
             },
-            "word": "DRENTELT"
-          },
-          {
-            "dir": "across",
-            "score": 14,
-            "start": {
-              "col": 9,
-              "row": 5
-            },
-            "word": "MI"
-          },
-          {
-            "dir": "across",
-            "score": 9,
-            "start": {
-              "col": 9,
-              "row": 6
-            },
-            "word": "EX"
-          },
-          {
-            "dir": "across",
-            "score": 3,
-            "start": {
-              "col": 9,
-              "row": 7
-            },
-            "word": "NE"
-          }
-        ]
-      },
-      {
-        "bounties": [],
-        "kind": "play",
-        "score": {
-          "base": 23,
-          "bingo": 0,
-          "bounty": 0,
-          "comeback": 0,
-          "handicap": 0,
-          "total": 23
-        },
-        "seat": 0,
-        "tiles": [
-          {
-            "pos": {
-              "col": 12,
-              "row": 1
-            },
             "tile": {
-              "letter": "T"
+              "letter": "P"
             }
           },
           {
             "pos": {
-              "col": 12,
-              "row": 2
+              "col": 2,
+              "row": 3
             },
             "tile": {
-              "letter": "O"
+              "letter": "G"
             }
           }
         ],
@@ -2149,28 +1898,126 @@
             "dir": "down",
             "score": 12,
             "start": {
-              "col": 12,
-              "row": 0
-            },
-            "word": "ITO"
-          },
-          {
-            "dir": "across",
-            "score": 3,
-            "start": {
-              "col": 11,
-              "row": 1
-            },
-            "word": "ET"
-          },
-          {
-            "dir": "across",
-            "score": 8,
-            "start": {
-              "col": 11,
+              "col": 2,
               "row": 2
             },
-            "word": "NO"
+            "word": "PG"
+          },
+          {
+            "dir": "across",
+            "score": 12,
+            "start": {
+              "col": 2,
+              "row": 2
+            },
+            "word": "PG"
+          },
+          {
+            "dir": "across",
+            "score": 4,
+            "start": {
+              "col": 2,
+              "row": 3
+            },
+            "word": "GE"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 37,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 37
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 9,
+              "row": 13
+            },
+            "tile": {
+              "letter": "D"
+            }
+          },
+          {
+            "pos": {
+              "col": 10,
+              "row": 13
+            },
+            "tile": {
+              "letter": "O"
+            }
+          },
+          {
+            "pos": {
+              "col": 11,
+              "row": 13
+            },
+            "tile": {
+              "letter": "L"
+            }
+          },
+          {
+            "pos": {
+              "col": 12,
+              "row": 13
+            },
+            "tile": {
+              "letter": "I"
+            }
+          },
+          {
+            "pos": {
+              "col": 13,
+              "row": 13
+            },
+            "tile": {
+              "letter": "N"
+            }
+          },
+          {
+            "pos": {
+              "col": 14,
+              "row": 13
+            },
+            "tile": {
+              "letter": "G"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "across",
+            "score": 23,
+            "start": {
+              "col": 9,
+              "row": 13
+            },
+            "word": "DOLING"
+          },
+          {
+            "dir": "down",
+            "score": 10,
+            "start": {
+              "col": 9,
+              "row": 13
+            },
+            "word": "DE"
+          },
+          {
+            "dir": "down",
+            "score": 4,
+            "start": {
+              "col": 10,
+              "row": 13
+            },
+            "word": "ON"
           }
         ]
       },
@@ -2181,25 +2028,25 @@
           "base": 32,
           "bingo": 0,
           "bounty": 0,
-          "comeback": 8,
+          "comeback": 0,
           "handicap": 0,
-          "total": 40
+          "total": 32
         },
-        "seat": 1,
+        "seat": 0,
         "tiles": [
           {
             "pos": {
-              "col": 5,
-              "row": 5
+              "col": 11,
+              "row": 12
             },
             "tile": {
-              "letter": "M"
+              "letter": "D"
             }
           },
           {
             "pos": {
-              "col": 5,
-              "row": 6
+              "col": 12,
+              "row": 12
             },
             "tile": {
               "letter": "M"
@@ -2208,22 +2055,75 @@
         ],
         "words": [
           {
-            "dir": "down",
-            "score": 16,
+            "dir": "across",
+            "score": 14,
             "start": {
-              "col": 5,
-              "row": 5
+              "col": 11,
+              "row": 12
             },
-            "word": "MM"
+            "word": "DM"
           },
           {
-            "dir": "across",
-            "score": 16,
+            "dir": "down",
+            "score": 6,
             "start": {
-              "col": 3,
-              "row": 5
+              "col": 11,
+              "row": 12
             },
-            "word": "ARM"
+            "word": "DL"
+          },
+          {
+            "dir": "down",
+            "score": 12,
+            "start": {
+              "col": 12,
+              "row": 12
+            },
+            "word": "MI"
+          }
+        ]
+      },
+      {
+        "bounties": [],
+        "kind": "play",
+        "score": {
+          "base": 31,
+          "bingo": 0,
+          "bounty": 0,
+          "comeback": 0,
+          "handicap": 0,
+          "total": 31
+        },
+        "seat": 1,
+        "tiles": [
+          {
+            "pos": {
+              "col": 8,
+              "row": 1
+            },
+            "tile": {
+              "letter": "A"
+            }
+          },
+          {
+            "pos": {
+              "col": 9,
+              "row": 1
+            },
+            "tile": {
+              "letter": "X"
+            }
+          }
+        ],
+        "words": [
+          {
+            "dir": "across",
+            "score": 31,
+            "start": {
+              "col": 7,
+              "row": 1
+            },
+            "word": "WAX"
           }
         ]
       }
@@ -2461,38 +2361,39 @@
     "seats": [
       {
         "hintsLeft": 2,
-        "rack": null,
-        "rackCount": 1,
+        "rack": [
+          "R",
+          "Q",
+          "V",
+          "R",
+          "R"
+        ],
+        "rackCount": 5,
         "resigned": false,
-        "score": 698
+        "score": 699
       },
       {
         "hintsLeft": 3,
-        "rack": [],
+        "rack": null,
         "rackCount": 0,
         "resigned": false,
-        "score": 650
+        "score": 765
       }
     ],
     "status": {
       "adjustments": [
-        -2,
-        2
+        -20,
+        20
       ],
       "reason": "rackEmptied",
       "seat": 1,
       "state": "finished",
       "winners": [
-        0
+        1
       ]
     },
     "turn": 1,
-    "unseen": [
-      {
-        "count": 1,
-        "tile": "O"
-      }
-    ],
-    "viewer": 1
+    "unseen": [],
+    "viewer": 0
   }
 }

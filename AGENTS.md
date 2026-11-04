@@ -274,6 +274,34 @@ Settled 2026-11-02 (do not reopen):
     passphrase and lives 10 minutes. Phone-only games (pass-and-play, the
     computer) never reach the server and are not restored.
 
+### Website CSS (decided 2026-11-04)
+
+29. **One stylesheet, a small design system, mobile first.**
+    `static/app.css` is layered (`reset, tokens, base, components`). Colours
+    are tokens on `:root` with `light-dark()`; tints come from `color-mix`,
+    never new hex values. Type and space are rem scales (`--step-*`,
+    `--space-*`) so page zoom and the browser's text size scale everything;
+    `clamp()` always keeps a rem term. Hairlines, focus rings and board gaps
+    stay in px on purpose.
+    - **Semantic classes only**, no utility classes: a template names what a
+      thing is (`.panel`, `.rows`, `.row-actions`, `.field-row`, `.sheet`)
+      and the stylesheet decides how it looks. State lives in attributes
+      where HTML has one (`aria-current`, `disabled`, `popover`).
+    - **Intrinsic first**: wrapping flex rows with flex-basis and auto-fit
+      grids (`minmax(min(100%, Xrem), 1fr)`) do the responsive work.
+      Grid containers use `minmax(0, 1fr)` columns so a long select or code
+      can never widen the page. Only two queries exist, both container
+      queries: the header (its sections scroll, so they never force a wrap)
+      and the replay stepper; the board sizes its letters in `cqi`.
+    - **Logical properties** throughout (`inline-size`, `margin-inline`,
+      `inset-block-start`, `text-align: end`).
+    - Lists of people, invites, devices and games are `ul.rows`, not tables;
+      only the standings stay a table, inside `.table-scroll`. Dates are
+      `<time>` so they never break. Dialogs are the popover API (no JS,
+      CSP-safe). Controls are at least `--tap` (2.75rem) high.
+    - Check pages at 360 and 1280 px, in dark mode and at 24 px base text;
+      the content must never be wider than the viewport.
+
 ### FFI and android-core (decided 2026-11-02)
 
 25. **JSON across the boundary.** The app gets views, actions, configs and

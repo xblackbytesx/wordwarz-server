@@ -1,23 +1,23 @@
 {
   "game": {
-    "createdAt": "2026-11-02T23:21:18.459220Z",
-    "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+    "createdAt": "2026-11-04T00:02:47.208343Z",
+    "id": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
     "players": [
       {
-        "displayName": "Mila",
+        "displayName": "Mary",
         "seat": 0,
-        "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-        "username": "mila"
+        "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+        "username": "mary"
       },
       {
-        "displayName": "",
+        "displayName": "Sheldon",
         "seat": 1,
-        "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-        "username": "mum"
+        "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+        "username": "sheldon"
       }
     ],
     "rev": 1,
-    "turnStartedAt": "2026-11-02T23:21:18.459220Z",
+    "turnStartedAt": "2026-11-04T00:02:47.208343Z",
     "turnTimerHours": 72,
     "view": {
       "bagCount": 87,
@@ -267,11 +267,11 @@
         "language": "nl",
         "players": [
           {
-            "rackSize": 8,
+            "rackSize": 7,
             "scorePercent": 100
           },
           {
-            "rackSize": 7,
+            "rackSize": 8,
             "scorePercent": 100
           }
         ],
@@ -514,23 +514,22 @@
         {
           "hintsLeft": 2,
           "rack": [
-            "E",
             "K",
-            "P",
-            "N",
+            "L",
+            "E",
             "R",
             "E",
-            "X",
-            "E"
+            "W",
+            "S"
           ],
-          "rackCount": 8,
+          "rackCount": 7,
           "resigned": false,
           "score": 0
         },
         {
           "hintsLeft": 3,
           "rack": null,
-          "rackCount": 7,
+          "rackCount": 8,
           "resigned": false,
           "score": 0
         }
@@ -557,7 +556,7 @@
           "tile": "D"
         },
         {
-          "count": 13,
+          "count": 14,
           "tile": "E"
         },
         {
@@ -585,7 +584,7 @@
           "tile": "K"
         },
         {
-          "count": 5,
+          "count": 4,
           "tile": "L"
         },
         {
@@ -593,7 +592,7 @@
           "tile": "M"
         },
         {
-          "count": 6,
+          "count": 7,
           "tile": "N"
         },
         {
@@ -601,7 +600,7 @@
           "tile": "O"
         },
         {
-          "count": 2,
+          "count": 3,
           "tile": "P"
         },
         {
@@ -613,7 +612,7 @@
           "tile": "R"
         },
         {
-          "count": 6,
+          "count": 5,
           "tile": "S"
         },
         {
@@ -630,7 +629,7 @@
         },
         {
           "count": 1,
-          "tile": "W"
+          "tile": "X"
         },
         {
           "count": 1,
@@ -650,18 +649,18 @@
   },
   "hint": {
     "scored": {
-      "base": 66,
+      "base": 76,
       "bingo": 40,
       "tilesUsed": 7,
       "words": [
         {
           "dir": "down",
-          "score": 26,
+          "score": 36,
           "start": {
             "col": 7,
             "row": 1
           },
-          "word": "KEPEREN"
+          "word": "WERKLES"
         }
       ]
     },
@@ -672,7 +671,7 @@
           "row": 1
         },
         "tile": {
-          "letter": "K"
+          "letter": "W"
         }
       },
       {
@@ -690,7 +689,7 @@
           "row": 3
         },
         "tile": {
-          "letter": "P"
+          "letter": "R"
         }
       },
       {
@@ -699,7 +698,7 @@
           "row": 4
         },
         "tile": {
-          "letter": "E"
+          "letter": "K"
         }
       },
       {
@@ -708,7 +707,7 @@
           "row": 5
         },
         "tile": {
-          "letter": "R"
+          "letter": "L"
         }
       },
       {
@@ -726,7 +725,7 @@
           "row": 7
         },
         "tile": {
-          "letter": "N"
+          "letter": "S"
         }
       }
     ]

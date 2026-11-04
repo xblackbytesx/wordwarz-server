@@ -97,21 +97,23 @@ fn golden(name: &str, v: &Value) {
 #[tokio::test]
 async fn the_api_wire_contract() {
     let Some(db) = Db::new().await else { return };
-    let mum = db.person("mum", Role::Admin).await;
+    // The Young Sheldon cast, so the app's screenshots built from these files read like a family.
+    let mum = db.person("mary", Role::Admin).await;
+    sqlx::query("UPDATE users SET display_name = 'Mary' WHERE id = $1").bind(mum).execute(&db.pool).await.unwrap();
     let m = db.device(mum, "Pixel").await;
     let app = db.app();
 
-    let inv: Value = m.json("POST", "/api/v1/invites", &json!({ "note": "Mila" })).await;
+    let inv: Value = m.json("POST", "/api/v1/invites", &json!({ "note": "Sheldon" })).await;
     golden("invite", &inv);
     let token = inv["url"].as_str().unwrap().rsplit('/').next().unwrap().to_string();
     let (_, joined) = anon(
         &app,
         "/api/v1/join",
-        &json!({ "invite": token, "username": "mila", "displayName": "Mila", "device": "Tablet" }),
+        &json!({ "invite": token, "username": "sheldon", "displayName": "Sheldon", "device": "Tablet" }),
     )
     .await;
     golden("signed_in", &joined);
-    let kid = wordwarz_server::users::id_by_username(&db.pool, "mila").await.unwrap();
+    let kid = wordwarz_server::users::id_by_username(&db.pool, "sheldon").await.unwrap();
     let k = common::Device { app: db.app(), token: joined["token"].as_str().unwrap().into(), user: kid };
     let link: Value = k.json("POST", "/api/v1/link", &json!({})).await;
     golden("link", &link);

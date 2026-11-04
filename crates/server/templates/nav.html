@@ -1,13 +1,15 @@
-<header class="nav">
-  <a class="brand" href="/">WordWarZ</a>
-  <nav>
-    <a href="/games" class="{{ nav.on("games") }}">Games</a>
-    <a href="/scoreboard" class="{{ nav.on("scoreboard") }}">Scoreboard</a>
-    <a href="/people" class="{{ nav.on("people") }}">People</a>
-    <a href="/devices" class="{{ nav.on("devices") }}">Devices</a>
-  </nav>
-  <div class="who">
-    <a href="/settings" class="{{ nav.on("settings") }}">{{ nav.label }}</a>
-    <form method="post" action="/logout"><button type="submit" class="link">Log out</button></form>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="/">WordWarZ</a>
+    <nav class="sections" aria-label="Sections">
+      <a href="/games"{% if nav.active == "games" %} aria-current="page"{% endif %}>Games</a>
+      <a href="/scoreboard"{% if nav.active == "scoreboard" %} aria-current="page"{% endif %}>Scoreboard</a>
+      <a href="/people"{% if nav.active == "people" %} aria-current="page"{% endif %}>People</a>
+      <a href="/devices"{% if nav.active == "devices" %} aria-current="page"{% endif %}>Devices</a>
+    </nav>
+    <div class="account">
+      <a href="/settings"{% if nav.active == "settings" %} aria-current="page"{% endif %}>{{ nav.label }}</a>
+      <form method="post" action="/logout"><button type="submit" class="quiet compact">Log out</button></form>
+    </div>
   </div>
 </header>

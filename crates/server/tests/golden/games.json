@@ -1,33 +1,33 @@
 [
   {
     "finished": true,
-    "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+    "id": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
     "language": "nl",
-    "mySeat": 1,
+    "mySeat": 0,
     "myTurn": false,
     "players": [
       {
-        "displayName": "Mila",
+        "displayName": "Mary",
         "seat": 0,
-        "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-        "username": "mila"
+        "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+        "username": "mary"
       },
       {
-        "displayName": "",
+        "displayName": "Sheldon",
         "seat": 1,
-        "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-        "username": "mum"
+        "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+        "username": "sheldon"
       }
     ],
-    "rev": 23,
+    "rev": 21,
     "scores": [
-      698,
-      650
+      699,
+      765
     ],
     "turn": 1,
-    "updatedAt": "2026-11-02T23:21:19.167958Z",
+    "updatedAt": "2026-11-04T00:02:47.778993Z",
     "winners": [
-      0
+      1
     ]
   }
 ]

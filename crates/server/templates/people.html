@@ -2,74 +2,85 @@
 {% block title %}People · WordWarZ{% endblock %}
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
-<h1>People</h1>
+<header class="page-header"><h1>People</h1></header>
 {% if admin %}
-<section class="card">
-  <h2>Invite someone</h2>
-  <p class="muted">A one-time QR code and link. Scanning it with the app creates the account and signs that phone in: no email, no passphrase needed. A code to scan here and now works for 10 minutes; a link to send works for 7 days.</p>
+<section class="panel">
+  <header class="panel-header">
+    <h2>Invite someone</h2>
+    <p class="meta">A one-time QR code and link. Scanning it with the app creates the account and signs that phone in: no email, no passphrase needed. A code to scan here and now works for 10 minutes; a link to send works for 7 days.</p>
+  </header>
   <div id="invite-box">
-    <form method="post" action="/people/invites" hx-post="/people/invites" hx-target="#invite-box" class="inline">
-      <input type="text" name="note" placeholder="Who is it for? (optional)" maxlength="80">
-      <select name="validity"><option value="scan">Scan now (10 minutes)</option><option value="link">Send as link (7 days)</option></select>
-      <select name="role"><option value="user">Player</option><option value="admin">Admin</option></select>
+    <form method="post" action="/people/invites" hx-post="/people/invites" hx-target="#invite-box" class="field-row">
+      <input type="text" name="note" placeholder="Who is it for? (optional)" maxlength="80" aria-label="Who is it for">
+      <select name="validity" aria-label="Valid for"><option value="scan">Scan now (10 minutes)</option><option value="link">Send as link (7 days)</option></select>
+      <select name="role" aria-label="Role"><option value="user">Player</option><option value="admin">Admin</option></select>
       <button type="submit" class="primary">Create invite</button>
     </form>
   </div>
   {% if !invites.is_empty() %}
   <h3>Open invites</h3>
-  <table class="list">
-    <thead><tr><th>For</th><th>Role</th><th>Expires</th><th></th></tr></thead>
-    <tbody>
+  <ul class="rows">
     {% for i in invites %}
-      <tr id="invite-{{ i.id }}"><td>{{ i.note }}</td><td>{{ i.role }}</td><td>{{ i.expires }}</td>
-        <td class="actions"><form method="post" action="/people/invites/{{ i.id }}/delete" hx-post="/people/invites/{{ i.id }}/delete" hx-target="#invite-{{ i.id }}" hx-swap="outerHTML"><button type="submit" class="small danger">Withdraw</button></form></td></tr>
+    <li id="invite-{{ i.id }}">
+      <div class="row-main">
+        <span class="row-title">{% if i.note.is_empty() %}Invite{% else %}{{ i.note }}{% endif %} <span class="badge">{{ i.role }}</span></span>
+        <span class="meta">Works until <time>{{ i.expires }}</time></span>
+      </div>
+      <div class="row-actions">
+        <form method="post" action="/people/invites/{{ i.id }}/delete" hx-post="/people/invites/{{ i.id }}/delete" hx-target="#invite-{{ i.id }}" hx-swap="outerHTML"><button type="submit" class="danger compact">Withdraw</button></form>
+      </div>
+    </li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
 {% endif %}
-<section class="card">
+<section class="panel">
   <h2>Everyone</h2>
-  <table class="list">
-    <thead><tr><th>Username</th><th>Name</th><th>Since</th>{% if admin %}<th></th>{% endif %}</tr></thead>
-    <tbody>
+  <ul class="rows">
     {% for p in people %}
-      <tr{% if p.disabled %} class="dim"{% endif %}>
-        <td>{{ p.username }}{% if p.me %} <span class="badge">you</span>{% endif %}{% if p.admin %} <span class="badge">admin</span>{% endif %}{% if p.disabled %} <span class="badge warn">disabled</span>{% endif %}</td>
-        <td>{{ p.name }}</td>
-        <td>{{ p.created }}</td>
-        {% if admin %}
-        <td class="actions">
-          <form method="post" action="/people/{{ p.id }}/role">
-            {% if p.admin %}<input type="hidden" name="role" value="user"><button type="submit" class="small">Make player</button>
-            {% else %}<input type="hidden" name="role" value="admin"><button type="submit" class="small">Make admin</button>{% endif %}
-          </form>
-          {% if !p.me && !p.disabled %}
-          <details class="new-phone">
-            <summary class="button small">New phone</summary>
-            <div id="code-{{ p.id }}">
-              <form method="post" action="/people/{{ p.id }}/device-code" hx-post="/people/{{ p.id }}/device-code" hx-target="#code-{{ p.id }}" class="stack">
-                <p class="hint">A one-time sign-in code for {{ p.username }}'s new phone. Confirm with your own passphrase.</p>
-                <input type="password" name="passphrase" placeholder="Your passphrase" autocomplete="current-password" required>
-                <label class="check"><input type="checkbox" name="sign_out" value="1"> Sign them out on their other devices (lost phone)</label>
-                <button type="submit" class="small primary">Show code</button>
-              </form>
-            </div>
-          </details>
-          {% endif %}
-          {% if !p.me %}
-            {% if p.disabled %}
-            <form method="post" action="/people/{{ p.id }}/enable"><button type="submit" class="small">Enable</button></form>
-            {% else %}
-            <form method="post" action="/people/{{ p.id }}/disable"><button type="submit" class="small danger">Disable</button></form>
-            {% endif %}
-          {% endif %}
-        </td>
+    <li{% if p.disabled %} class="disabled"{% endif %}>
+      <div class="row-main">
+        <span class="row-title">{% if p.name.is_empty() %}{{ p.username }}{% else %}{{ p.name }}{% endif %}
+          {% if p.me %}<span class="badge">you</span>{% endif %}{% if p.admin %}<span class="badge ok">admin</span>{% endif %}{% if p.disabled %}<span class="badge warn">disabled</span>{% endif %}</span>
+        <span class="meta">@{{ p.username }} · since <time>{{ p.created }}</time></span>
+      </div>
+      {% if admin %}
+      <div class="row-actions">
+        {% if !p.me && !p.disabled %}
+        <button type="button" class="compact" popovertarget="phone-{{ p.id }}">New phone</button>
         {% endif %}
-      </tr>
+        <form method="post" action="/people/{{ p.id }}/role">
+          {% if p.admin %}<input type="hidden" name="role" value="user"><button type="submit" class="compact">Make player</button>
+          {% else %}<input type="hidden" name="role" value="admin"><button type="submit" class="compact">Make admin</button>{% endif %}
+        </form>
+        {% if !p.me %}
+          {% if p.disabled %}
+          <form method="post" action="/people/{{ p.id }}/enable"><button type="submit" class="compact">Enable</button></form>
+          {% else %}
+          <form method="post" action="/people/{{ p.id }}/disable"><button type="submit" class="danger compact">Disable</button></form>
+          {% endif %}
+        {% endif %}
+      </div>
+      {% if !p.me && !p.disabled %}
+      <div class="sheet" id="phone-{{ p.id }}" popover>
+        <div class="sheet-content" id="code-{{ p.id }}">
+          <div class="sheet-header">
+            <h2>New phone for {% if p.name.is_empty() %}{{ p.username }}{% else %}{{ p.name }}{% endif %}</h2>
+            <button type="button" class="quiet compact" popovertarget="phone-{{ p.id }}" popovertargetaction="hide">Close</button>
+          </div>
+          <form method="post" action="/people/{{ p.id }}/device-code" hx-post="/people/{{ p.id }}/device-code" hx-target="#code-{{ p.id }}" class="form">
+            <p class="meta">A one-time sign-in code for {{ p.username }}'s new phone, valid 10 minutes. Confirm with your own passphrase.</p>
+            <label class="field">Your passphrase <input type="password" name="passphrase" autocomplete="current-password" required></label>
+            <label class="checkbox"><input type="checkbox" name="sign_out" value="1"> Sign them out on their other devices (lost phone)</label>
+            <button type="submit" class="primary">Show code</button>
+          </form>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+    </li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
 </section>
 {% endblock %}

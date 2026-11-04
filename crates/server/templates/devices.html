@@ -2,30 +2,34 @@
 {% block title %}Devices · WordWarZ{% endblock %}
 {% block nav %}{% include "nav.html" %}{% endblock %}
 {% block content %}
-<h1>Devices</h1>
-<section class="card">
-  <h2>Sign in another device</h2>
-  <p class="muted">Makes a QR code for the app on a new phone or tablet. It works once, for 10 minutes.</p>
+<header class="page-header"><h1>Devices</h1></header>
+<section class="panel">
+  <header class="panel-header">
+    <h2>Sign in another device</h2>
+    <p class="meta">Makes a QR code for the app on a new phone or tablet. It works once, for 10 minutes.</p>
+  </header>
   <div id="link-box">
     <form method="post" action="/devices/link" hx-post="/devices/link" hx-target="#link-box"><button type="submit" class="primary">Show a code</button></form>
   </div>
 </section>
-<section class="card">
+<section class="panel">
   <h2>Your devices</h2>
   {% if tokens.is_empty() %}
-  <p class="muted">No devices yet.</p>
+  <p class="empty">No devices yet.</p>
   {% else %}
-  <table class="list">
-    <thead><tr><th>Device</th><th>Since</th><th>Last seen</th><th>Push</th><th></th></tr></thead>
-    <tbody>
+  <ul class="rows">
     {% for t in tokens %}
-      <tr id="token-{{ t.id }}">
-        <td>{{ t.label }}</td><td>{{ t.created }}</td><td>{{ t.last_used }}</td><td>{% if t.push %}on{% else %}off{% endif %}</td>
-        <td class="actions"><form method="post" action="/devices/{{ t.id }}/revoke" hx-post="/devices/{{ t.id }}/revoke" hx-target="#token-{{ t.id }}" hx-swap="outerHTML" hx-confirm="Sign {{ t.label }} out?"><button type="submit" class="danger small">Sign out</button></form></td>
-      </tr>
+    <li id="token-{{ t.id }}">
+      <div class="row-main">
+        <span class="row-title">{{ t.label }} {% if t.push %}<span class="badge ok">push on</span>{% endif %}</span>
+        <span class="meta">Since <time>{{ t.created }}</time> · last seen <time>{{ t.last_used }}</time></span>
+      </div>
+      <div class="row-actions">
+        <form method="post" action="/devices/{{ t.id }}/revoke" hx-post="/devices/{{ t.id }}/revoke" hx-target="#token-{{ t.id }}" hx-swap="outerHTML" hx-confirm="Sign {{ t.label }} out?"><button type="submit" class="danger compact">Sign out</button></form>
+      </div>
+    </li>
     {% endfor %}
-    </tbody>
-  </table>
+  </ul>
   {% endif %}
 </section>
 {% endblock %}

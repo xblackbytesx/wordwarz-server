@@ -1,22 +1,22 @@
 {
-  "createdAt": "2026-11-02T23:21:18.459220Z",
-  "id": "4a61b3da-30fd-4680-a94d-6b87f8242443",
+  "createdAt": "2026-11-04T00:02:47.208343Z",
+  "id": "de85bd7c-8600-4f33-84f8-2aefd887b3ee",
   "players": [
     {
-      "displayName": "Mila",
+      "displayName": "Mary",
       "seat": 0,
-      "userId": "697218e3-3fb5-41bc-a8b4-b2697360ba3e",
-      "username": "mila"
+      "userId": "96d4b14c-44e1-42fc-bf0c-55ae5d0b0391",
+      "username": "mary"
     },
     {
-      "displayName": "",
+      "displayName": "Sheldon",
       "seat": 1,
-      "userId": "7f98846e-91e3-47d5-855f-24e0442b4e7b",
-      "username": "mum"
+      "userId": "09c525f9-2cf8-4ddb-8ca0-c055e1625fe2",
+      "username": "sheldon"
     }
   ],
   "rev": 0,
-  "turnStartedAt": "2026-11-02T23:21:18.459220Z",
+  "turnStartedAt": "2026-11-04T00:02:47.208343Z",
   "turnTimerHours": 72,
   "view": {
     "bagCount": 87,
@@ -266,11 +266,11 @@
       "language": "nl",
       "players": [
         {
-          "rackSize": 8,
+          "rackSize": 7,
           "scorePercent": 100
         },
         {
-          "rackSize": 7,
+          "rackSize": 8,
           "scorePercent": 100
         }
       ],
@@ -512,23 +512,23 @@
     "seats": [
       {
         "hintsLeft": 3,
-        "rack": null,
-        "rackCount": 8,
+        "rack": [
+          "K",
+          "L",
+          "E",
+          "R",
+          "E",
+          "W",
+          "S"
+        ],
+        "rackCount": 7,
         "resigned": false,
         "score": 0
       },
       {
         "hintsLeft": 3,
-        "rack": [
-          "E",
-          "L",
-          "T",
-          "D",
-          "R",
-          "Q",
-          "N"
-        ],
-        "rackCount": 7,
+        "rack": null,
+        "rackCount": 8,
         "resigned": false,
         "score": 0
       }
@@ -551,11 +551,11 @@
         "tile": "C"
       },
       {
-        "count": 3,
+        "count": 4,
         "tile": "D"
       },
       {
-        "count": 15,
+        "count": 14,
         "tile": "E"
       },
       {
@@ -579,7 +579,7 @@
         "tile": "J"
       },
       {
-        "count": 4,
+        "count": 3,
         "tile": "K"
       },
       {
@@ -591,7 +591,7 @@
         "tile": "M"
       },
       {
-        "count": 6,
+        "count": 7,
         "tile": "N"
       },
       {
@@ -603,15 +603,19 @@
         "tile": "P"
       },
       {
+        "count": 1,
+        "tile": "Q"
+      },
+      {
         "count": 6,
         "tile": "R"
       },
       {
-        "count": 6,
+        "count": 5,
         "tile": "S"
       },
       {
-        "count": 6,
+        "count": 7,
         "tile": "T"
       },
       {
@@ -621,10 +625,6 @@
       {
         "count": 2,
         "tile": "V"
-      },
-      {
-        "count": 1,
-        "tile": "W"
       },
       {
         "count": 1,
@@ -643,6 +643,6 @@
         "tile": "?"
       }
     ],
-    "viewer": 1
+    "viewer": 0
   }
 }
